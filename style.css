@@ -1,0 +1,64 @@
+body {
+    font: 14px Verdana;
+    background: #f7f7f7;
+}
+
+a {
+    color: #990000;
+}
+
+h1 {
+    text-align: center;
+    color: #990000;
+}
+
+.grid {
+    padding-left: 1em;
+}
+
+.game {
+    width: 320px;
+    height: 260px;
+    float: left;
+    margin: 1em;
+    padding: 1em;
+    background: white;
+}
+
+.gamename {
+    display: block;
+    font-size: 130%;
+    white-space: nowrap;
+    width: 320px;
+    overflow: hidden;
+}
+
+.developername {
+    margin-bottom: 1em;
+    display: block;
+    white-space: nowrap;
+    width: 300px;
+    overflow: hidden;
+}
+
+.screenshotcontainer {
+    text-align: center;
+    height: 180px;
+    width: 320px;
+    overflow: hidden;
+}
+
+.screenshotcontainer img {
+    max-width: 320px;
+    min-height: 180px;
+}
+
+.screenshotcontainer, .noscreenshot, .ytframe {
+    margin-bottom: 0.5em;
+}
+
+.noscreenshot {
+    width: 320px;
+    height: 180px;
+    background: #eeeeee;
+}
