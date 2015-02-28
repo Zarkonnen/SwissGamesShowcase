@@ -4,6 +4,7 @@ print """<!DOCTYPE html>
         <meta charset="utf-8"> 
         <title>Swiss Games Showcase</title>
         <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
     <body>
         <h1>Swiss Games Showcase</h1>
@@ -17,6 +18,9 @@ with open("patch.json") as f:
 
 with open("out.json") as f:
     games = sorted(json.load(f), key=lambda x: x["year"] if "year" in x else "")[::-1]
+    col_index = 0
+    row_index = 0
+    print """<div id="row{0}">""".format(row_index)
     for game in games:
         if game["name"] in patches:
             for k, v in patches[game["name"]].iteritems():
@@ -42,12 +46,45 @@ with open("out.json") as f:
         if "steam" in game:
             print """<a href="{steam}" class="apple">Steam</a>""".format(**game)
         print """</div>"""
+        col_index += 1
+        if col_index == 3:
+            row_index += 1
+            col_index = 0
+            print """</div><div id="row{0}" style="display: none;">""".format(row_index)
 
-
+print """<script>var rows = {0};</script>""".format(row_index)
 print """
+</div>
         </div>
         <div style="clear: both;">&nbsp;</div>
-        <div class="info">An OpenGLAM Hackathon project by <a href="http://www.zarkonnen.com">David Stark</a>.</div>
+        <div id="loading" style="text-align: center;">Loading...</div>
+        <div class="info">An OpenGLAM Hackathon <a href="http://make.opendata.ch/wiki/project:swissgamesshowcase">project</a> by <a href="http://www.zarkonnen.com">David Stark</a>.</div>
+        <script>
+            var loading_all_done = false;
+            var row_index = 0;
+            function load_more(callback) {
+                jQuery("#row" + row_index).show();
+                row_index++;
+                if (row_index >= rows) {
+                    loading_all_done = true;
+                    jQuery("#loading").hide();
+                }
+                if (callback) { callback(); }
+            }
+            function load_if_screen_not_full() {
+                if (!loading_all_done && $("body").height() < $(window).height()) {
+                    load_more(load_if_screen_not_full);
+                }
+            }
+            $(document).ready(function() {
+                load_if_screen_not_full();
+	            $(window).scroll(function () {
+		            if (!loading_all_done && $(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+			            load_more();
+		            }
+	            });
+            });
+        </script>
     </body>
 </html>
 """
