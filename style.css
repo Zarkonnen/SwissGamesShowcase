@@ -48,6 +48,12 @@ h1 {
     }
 }
 
+@media screen and (max-width: 1500px) and (min-resolution: 140dpi) {
+    .grid {
+        width: 340px;
+    }
+}
+
 .game {
     width: 320px;
     height: 260px;
