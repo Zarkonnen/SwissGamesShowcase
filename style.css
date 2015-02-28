@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background: url('img/swisstiles.png');
-    min-width: 60em;
+    min-width: 58em;
 }
 
 a {
@@ -32,25 +32,25 @@ h1 {
 }
 
 .grid {
-    width: 60em;
+    width: 57em;
     margin: 0 auto;
 }
 
-@media screen and (max-width: 66em) {
+@media screen and (max-width: 62em) {
     .grid {
-        width: 39em;
+        width: 38em;
     }
-    .body {
+    body {
         min-width: 39em;
     }
 }
 
 @media screen and (max-width: 44em) {
     .grid {
-        width: 18em;
+        width: 19em;
     }
-    .body {
-        min-width: 18em;
+    body {
+        min-width: 20em;
     }
 }
 
@@ -58,7 +58,8 @@ h1 {
     width: 16em;
     height: 14em;
     float: left;
-    margin: 0.5em;
+    margin-left: 1em;
+    margin-bottom: 1em;
     padding: 1em;
     background: rgba(255, 255, 255, 0.2);
     text-align: center;
