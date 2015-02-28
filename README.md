@@ -11,4 +11,4 @@ The project requires Python, Java, and the beautifulsoup4 and requests Python li
 * Invoke `python sitegen.py` to re-generate `index.html`.
 
 ### About
-This project was created by [David Stark](http://www.zarkonnen.com) for the [1. Swiss OpenGLAM Hackathon](http://make.opendata.ch/wiki/event:2015-02) 2015.
+This project was created by [David Stark](http://www.zarkonnen.com) for the [1st Swiss Open Cultural Data Hackathon](http://make.opendata.ch/wiki/event:2015-02) 2015.
