@@ -8,6 +8,7 @@ The project requires Python, Java, and the beautifulsoup4 and requests Python li
 ### Usage
 * Re-export the list of Swiss games to HTML and save it as `ReleasedSwissVideoGames.html`.
 * Invoke `python crawl.py`. This will parse the HTML file and crawl the games' sites for media. This process takes a while and results in `out.csv`and `out.json`, two structured lists of information about the games.
+* You can edit `patch.json` to add information to the generated output or fix mistakes, which will override info for the next step.
 * Invoke `python sitegen.py` to re-generate `index.html`.
 
 ### About

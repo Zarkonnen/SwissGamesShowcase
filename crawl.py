@@ -83,18 +83,18 @@ def vimeo(soup):
 
 def apple(soup):
     for a_tag in soup.find_all('a'):
-        if 'href' in a_tag.attrs and a_tag['href'].startswith("https://itunes.apple.com/app/"):
+        if 'href' in a_tag.attrs and a_tag['href'].startswith("https://itunes.apple.com"):
             return a_tag['href']
 
 def google(soup):
     for a_tag in soup.find_all('a'):
-        if 'href' in a_tag.attrs and a_tag['href'].startswith("https://play.google.com/store/apps/details?"):
+        if 'href' in a_tag.attrs and a_tag['href'].startswith("https://play.google.com"):
             return a_tag['href']
 
 json_l = []
 with open("out.csv", "w") as f:
     w = csv.writer(f)
-    w.writerow(["Name", "URL", "Developer", "Year", "Screenshot", "YouTube", "Vimeo", "Steam", "Apple", "Google"])
+    w.writerow(["name", "url", "developer", "year", "screenshot", "youtube", "vimeo", "steam", "apple", "google"])
     for p in soup.find_all("p"):
         if p.a and "href" in p.a.attrs:
             name = p.a.text

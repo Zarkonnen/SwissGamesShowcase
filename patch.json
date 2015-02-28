@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Fireborne",
+        "screenshot": "http://firebornegame.com/img/planet-fog-and-sun.gif"
+    },
+    {
+        "name": "Hyper Jelly",
+        "screenshot": "http://a1.mzstatic.com/us/r30/Purple/v4/c6/f9/fe/c6f9fed1-1f36-1612-b27c-bf7d735398b3/screen520x924.jpeg"
+    },
+    {
+        "name": "Journey of a Roach",
+        "screenshot": "https://m1.behance.net/rendition/modules/122205447/disp/a3060fdd9353306295d5b89fca4c9fa3.png",
+        "steam": "http://store.steampowered.com/app/255300/"
+    },
+    {
+        "name": "First Strike",
+        "apple": "https://itunes.apple.com/us/app/first-strike-game/id783636913",
+        "google": "https://play.google.com/store/apps/details?id=ch.feinheit.games.firststrike"
+    },
+    {
+        "name": "Perils of Man",
+        "vimeo": "http://player.vimeo.com/video/88397750/",
+        "apple": "https://itunes.apple.com/us/app/perils-of-man-adventure-game/id919457017?mt=8"
+    }
+]

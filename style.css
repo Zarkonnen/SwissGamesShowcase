@@ -13,15 +13,17 @@ h1 {
 }
 
 .grid {
-    padding-left: 1em;
+    width: 1080px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .game {
     width: 320px;
     height: 260px;
     float: left;
-    margin: 1em;
-    padding: 1em;
+    margin: 10px;
+    padding: 10px;
     background: white;
 }
 
@@ -37,7 +39,7 @@ h1 {
     margin-bottom: 1em;
     display: block;
     white-space: nowrap;
-    width: 300px;
+    width: 320px;
     overflow: hidden;
 }
 
