@@ -35,6 +35,18 @@ h1 {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 66em) {
+    .grid {
+        width: 40em;
+    }
+}
+
+@media screen and (max-width: 44em) {
+    .grid {
+        width: 20em;
+    }
+}
+
 .game {
     width: 16em;
     height: 14em;
