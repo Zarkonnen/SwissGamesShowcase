@@ -72,7 +72,7 @@ print """
                 if (callback) { callback(); }
             }
             function load_if_screen_not_full() {
-                if (!loading_all_done && $("body").height() < $(window).height()) {
+                if (!loading_all_done && $("body").height() < $(window).height() + 400) {
                     load_more(load_if_screen_not_full);
                 }
             }
