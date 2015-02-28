@@ -2,8 +2,11 @@ Swiss Games Showcase
 --------------------
 A website made to show off the work of the growing Swiss computer game scene. The basis of the site is a [crowdsourced list](https://docs.google.com/document/d/1-BlXLSE8LImgajJB5DWvMkbupmBPU8EnEs6JEfjwHJs/edit) of Swiss games. This list is parsed, and additional information on each game is automatically gathered. Finally, a static showcase page is generated.
 
+### Additions and Improvements
+Want to add your game to this site? Add it to the list, make sure it has a year attached, and [email me](mailto:zarkonnen@gmail.com). Want to improve a game listing with a better screenshot, a video, buy links, etc? Make a pull request for patch.json, or email me.
+
 ### Setup
-The project requires Python, Java, and the beautifulsoup4 and requests Python libraries. Both libraries can be installed via pip. Also, create a "tmp" directory to act as a cache for downloaded images.
+Running the project requires Python, Java, and the beautifulsoup4 and requests Python libraries. Both libraries can be installed via pip. Also, create a "tmp" directory to act as a cache for downloaded images.
 
 ### Usage
 * Re-export the list of Swiss games to HTML and save it as `ReleasedSwissVideoGames.html`.
