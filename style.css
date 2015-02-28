@@ -38,19 +38,19 @@ h1 {
 
 @media screen and (max-width: 66em) {
     .grid {
-        width: 40em;
+        width: 39em;
     }
     .body {
-        min-width: 40em;
+        min-width: 39em;
     }
 }
 
 @media screen and (max-width: 44em) {
     .grid {
-        width: 20em;
+        width: 18em;
     }
     .body {
-        min-width: 20em;
+        min-width: 18em;
     }
 }
 
