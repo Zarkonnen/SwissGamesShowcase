@@ -1,6 +1,6 @@
 Swiss Games Showcase
 --------------------
-A website made to show off the work of the growing Swiss computer game scene. The basis of the site is a crowdsourced list of Swiss games. This list is parsed, and additional information on each game is automatically gathered. Finally, a static showcase page is generated.
+A website made to show off the work of the growing Swiss computer game scene. The basis of the site is a [crowdsourced list](https://docs.google.com/document/d/1-BlXLSE8LImgajJB5DWvMkbupmBPU8EnEs6JEfjwHJs/edit) of Swiss games. This list is parsed, and additional information on each game is automatically gathered. Finally, a static showcase page is generated.
 
 ### Setup
 The project requires Python, Java, and the beautifulsoup4 and requests Python libraries. Both libraries can be installed via pip. Also, create a "tmp" directory to act as a cache for downloaded images.
