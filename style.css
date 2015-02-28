@@ -48,12 +48,6 @@ h1 {
     }
 }
 
-@media screen and (max-width: 1000px) and (orientation: portrait) {
-    .grid {
-        width: 340px;
-    }
-}
-
 .game {
     width: 320px;
     height: 260px;
