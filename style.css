@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background: url('img/swisstiles.png');
+    min-width: 60em;
 }
 
 a {
@@ -39,11 +40,17 @@ h1 {
     .grid {
         width: 40em;
     }
+    .body {
+        min-width: 40em;
+    }
 }
 
 @media screen and (max-width: 44em) {
     .grid {
         width: 20em;
+    }
+    .body {
+        min-width: 20em;
     }
 }
 
