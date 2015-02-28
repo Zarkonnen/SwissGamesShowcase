@@ -48,7 +48,7 @@ h1 {
     }
 }
 
-@media screen and (max-width: 1500px) and (min-resolution: 140dpi) {
+@media screen and (max-width: 1500px) and (min-resolution: 100dpi) {
     .grid {
         width: 340px;
     }
