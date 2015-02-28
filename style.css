@@ -58,8 +58,7 @@ h1 {
     width: 16em;
     height: 14em;
     float: left;
-    margin-left: 1em;
-    margin-bottom: 1em;
+    margin: 0.5em;
     padding: 1em;
     background: rgba(255, 255, 255, 0.2);
     text-align: center;
