@@ -41,5 +41,41 @@
     {
         "name": "Kind of Soccer",
         "screenshot": "http://a1.mzstatic.com/us/r30/Purple3/v4/fe/31/7c/fe317cc6-2ac0-f828-4646-76885c2aef6a/icon175x175.jpeg"
+    },
+    {
+        "name": "Trigger Rally",
+        "year": "2012"
+    },
+    {
+        "name": "Discrimination Pong",
+        "screenshot": "http://www.and-or.ch/discriminationpong/pictures/screenshot_alternate.png"
+    },
+    {
+        "name": "Spells of Genesis",
+        "screenshot": "http://www.spellsofgenesis.com/img/banner_02_en.jpg"
+    },
+    {
+        "name": "FoxTrotte",
+        "screenshot": "http://static.wixstatic.com/media/79e134_a382716f76234462ae6b2e83a5079f1b.png_srz_p_960_540_75_22_0.50_1.20_0.00_png_srz"
+    },
+    {
+        "name": "Bounce^2",
+        "screenshot": "http://mobydickgames.com/images/bounce.jpg"
+    },
+    {
+        "name": "The Fugitive Program",
+        "screenshot": "http://tfp.2ndsky.ch/images/Assets22-01-2010_20-41-33.jpg"
+    },
+    {
+        "name": "Spirit Fever",
+        "screenshot": "http://www.spirit-fever.com/game/images/characters/CaliChar.png"
+    },
+    {
+        "name": "Monospace",
+        "screenshot": "http://www.nonverbal.ch/img/001.png"
+    },
+    {
+        "name": "OKO",
+        "vimeo": "http://player.vimeo.com/video/51215714"
     }
 ]

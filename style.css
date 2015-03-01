@@ -12,13 +12,18 @@ body {
     min-width: 58em;
 }
 
-a {
+a, .creator {
     color: #990000;
     text-shadow: 0 0 0.5em white;
     text-decoration: none;
+    cursor: pointer;
 }
 
-a:hover {
+#clear_filter {
+    cursor: pointer;
+}
+
+a:hover, .creator:hover, #clear_filter:hover {
     color: #cc0000;
 }
 
@@ -29,6 +34,16 @@ h1 {
     text-shadow: 0 0 1em white, 0 0 0.2em white;
     margin: 0;
     padding: 1em;
+}
+
+#filter {
+    text-align: center;
+    font-size: 150%;
+    color: #990000;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
+    margin: 0;
+    padding-bottom: 1em;
+    display: none;
 }
 
 .grid {

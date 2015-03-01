@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 print """<!DOCTYPE html>
 <html>
     <head>
@@ -9,19 +11,23 @@ print """<!DOCTYPE html>
     </head>
     <body>
         <h1>Swiss Games Showcase</h1>
+        <div id="filter"><span id="filtername"></span> <span id="clear_filter" onclick="clear_filter()">[x]</span></div>
         <div class="grid">
 """
 
-import json
+import json, re
 
 with open("patch.json") as f:
     patches = {e["name"]:e for e in json.load(f)}
 
+def get_creators(developer):
+    return re.split(" ?[,+/&:] ?", developer)
+
 with open("out.json") as f:
     games = sorted(json.load(f), key=lambda x: x["year"] if "year" in x else "")[::-1]
-    col_index = 0
-    row_index = 0
-    print """<div id="row{0}">""".format(row_index)
+    creator_to_games = {}
+    creator_to_id = {}
+    id_counter = 1
     for game in games:
         if game["name"] in patches:
             for k, v in patches[game["name"]].iteritems():
@@ -30,8 +36,32 @@ with open("out.json") as f:
             continue
         for k in game:
             game[k] = game[k].encode('utf-8')
-        print """<div class="game">"""
-        print """<div class="gamename"><a href="{url}">{name}</a></div><div class="developername">{developer} {year}</div>""".format(**game)
+        cs = get_creators(game["developer"])
+        for c in cs:
+            if not c in creator_to_id:
+                creator_to_id[c] = id_counter
+                id_counter += 1
+            if not c in creator_to_games:
+                creator_to_games[c] = [game["name"]]
+            else:
+                creator_to_games[c].append(game["name"])
+    col_index = 0
+    row_index = 0
+    print """<div id="row{0}">""".format(row_index)
+    for game in games:
+        if not "year" in game:
+            continue
+        cs = get_creators(game["developer"])
+        print """<div class="game {0}">""".format(" ".join("c" + str(creator_to_id[c]) for c in cs)) 
+        print """<div class="gamename"><a href="{url}">{name}</a></div><div class="developername">""".format(**game)
+        for c in cs:
+            if len(creator_to_games[c]) > 1:
+                print """<span class="creator" onclick="filter_creator({0}, '{1}')">{1}</span>""".format(creator_to_id[c], c.replace("'", "’"))
+            else:
+                print c
+            if c != cs[-1]:
+                print "/ "
+        print """ {year}</div>""".format(**game)
         if "vimeo" in game:
             print """<iframe class="ytframe" src="{0}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>""".format(game["vimeo"].replace("autoplay=1", "autoplay=0"))
         elif "youtube" in game:
@@ -52,7 +82,7 @@ with open("out.json") as f:
         if col_index == 3:
             row_index += 1
             col_index = 0
-            print """</div><div id="row{0}" style="display: none;">""".format(row_index)
+            print """</div><div id="row{0}" class="row" style="display: none;">""".format(row_index)
 
 print """<script>var rows = {0};</script>""".format(row_index)
 print """
@@ -86,6 +116,19 @@ print """
 		            }
 	            });
             });
+            function filter_creator(id, name) {
+                jQuery('.game').hide();
+                jQuery('.row').show();
+                jQuery('.c' + id).show();
+                jQuery('#filtername').html(name);
+                jQuery('#filter').show();
+                jQuery("#loading").hide();
+            }
+            function clear_filter() {
+                jQuery('.game').show();
+                jQuery('.row').show();
+                jQuery('#filter').hide();
+            }
         </script>
     </body>
 </html>

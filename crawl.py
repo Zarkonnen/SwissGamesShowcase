@@ -11,7 +11,7 @@ def enc(l):
 def img_dims(src):
     name = "tmp/" + src.replace("/", "_").replace(":", "")
     if not os.path.exists(name):
-        r2 = requests.get(src, timeout=2)
+        r2 = requests.get(src, timeout=8)
         if r2.status_code == 200:
             with open(name, 'wb') as f:
                 f.write(r2.content)
@@ -22,7 +22,7 @@ def check_url(url):
     if not url.startswith("http"):
         return None
     try:
-        r = requests.get(url, timeout=2)
+        r = requests.get(url, timeout=8)
     except:
         return None
     if 199 < r.status_code < 400:
@@ -34,7 +34,7 @@ def screenshot(soup):
     best_size = 200 * 100
     best_screen_url = None
     for img_tag in soup.find_all('img'):
-        time.sleep(0.3)
+        time.sleep(0.1)
         try:
             src = urljoin(url, img_tag["src"])
             w, h = img_dims(src)
@@ -47,7 +47,7 @@ def screenshot(soup):
             pass
     for a_tag in soup.find_all('a'):
         if "href" in a_tag.attrs and (a_tag["href"].endswith(".jpg") or a_tag["href"].endswith(".png")):
-            time.sleep(0.3)
+            time.sleep(0.1)
             try:
                 src = urljoin(url, a_tag["href"])
                 w, h = img_dims(src)
@@ -100,9 +100,17 @@ with open("out.csv", "w") as f:
             name = p.a.text
             url = urllib.unquote(p.a["href"].replace("http://www.google.com/url?q=", "").replace("https://www.google.com/url?q=", "").split("&")[0])
             soup = check_url(url)
-            if soup:
-                m = re.match(".*\\(([^,]+)(, ?([0-9]{4}))?\\).*", p.text)
-                if m:
+            if not soup:
+                print "Skipped - cannot load website at " + url
+            else:
+                m = re.match(".*\\(([^,]+),? ?(([0-9]{4}))?\\).*", p.text)
+                if not m:
+                    m = re.match(".*\\((.+)(, ?([0-9]{4}))\\).*", p.text)
+                if not m:
+                    m = re.match(".*\\(([^,]+),? ?(([0-9]{4})).*", p.text)
+                if not m:
+                    print "Skipped - cannot parse info: " + p.text
+                else:
                     developer = m.group(1)
                     year = m.group(3)
                     screen = screenshot(soup)
