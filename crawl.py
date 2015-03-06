@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from urlparse import urljoin
-import urllib, re, csv, requests, shutil, subprocess, os, time, json
+import urllib, re, requests, shutil, subprocess, os, time, json, sys
 
 with open("ReleasedSwissVideoGames.html") as f:
     soup = BeautifulSoup(f)
@@ -40,7 +40,7 @@ def screenshot(soup):
             w, h = img_dims(src)
             size = w * h
             aspect = w * 1.0 / h
-            if aspect < 2.4 and aspect > 0.6 and size > best_size:
+            if aspect < 5.0 and aspect > 0.3 and size > best_size:
                 best_screen_url = src
                 best_size = size
         except:
@@ -53,12 +53,22 @@ def screenshot(soup):
                 w, h = img_dims(src)
                 size = w * h
                 aspect = w * 1.0 / h
-                if aspect < 2.4 and aspect > 0.6 and size > best_size:
+                if aspect < 5.0 and aspect > 0.3 and size > best_size:
                     best_screen_url = src
                     best_size = size
             except:
                 pass
-    return best_screen_url
+    if not best_screen_url:
+        return None
+    # Copy to media
+    format = best_screen_url.split(".")[-1].lower()
+    src = "tmp/" + best_screen_url.replace("/", "_").replace(":", "")
+    dst = "img/media/" + re.sub("[^a-zA-Z0-9.]", "", best_screen_url)
+    if not format in ["jpg", "png", "gif"]:
+        format = "png"
+        dst = dst + ".png"
+    subprocess.check_output(["java", "-cp", ".", "Resize", src, "400", dst, format])
+    return dst
 
 def youtube(soup):
     for iframe_tag in soup.find_all('iframe'):
@@ -91,51 +101,68 @@ def google(soup):
         if 'href' in a_tag.attrs and a_tag['href'].startswith("https://play.google.com"):
             return a_tag['href']
 
+update_mask = None
+if len(sys.argv) > 1:
+    with open(sys.argv[1], "r") as f:
+        update_mask = set(json.load(f))
+
 json_l = []
-with open("out.csv", "w") as f:
-    w = csv.writer(f)
-    w.writerow(["name", "url", "developer", "year", "screenshot", "youtube", "vimeo", "steam", "apple", "google"])
-    for p in soup.find_all("p"):
-        if p.a and "href" in p.a.attrs:
-            name = p.a.text
-            url = urllib.unquote(p.a["href"].replace("http://www.google.com/url?q=", "").replace("https://www.google.com/url?q=", "").split("&")[0])
-            soup = check_url(url)
-            if not soup:
-                print "Skipped - cannot load website at " + url
+try:
+    with open("out.json", "r") as f:
+        json_l = json.load(f)
+except:
+    pass
+
+def put(json_l, o):
+    for x in range(len(json_l)):
+        if json_l[x]["name"] == o["name"]:
+            json_l[x] = o
+            return
+    json_l.append(o)
+
+for p in soup.find_all("p"):
+    if p.a and "href" in p.a.attrs:
+        name = p.a.text
+        if update_mask and not name in update_mask:
+            continue
+        url = urllib.unquote(p.a["href"].replace("http://www.google.com/url?q=", "").replace("https://www.google.com/url?q=", "").split("&")[0])
+        soup = check_url(url)
+        print name
+        if not soup:
+            print "Skipped - cannot load website at " + url
+        else:
+            m = re.match(".*\\(([^,]+),? ?(([0-9]{4}))?\\).*", p.text)
+            if not m:
+                m = re.match(".*\\((.+)(, ?([0-9]{4}))\\).*", p.text)
+            if not m:
+                m = re.match(".*\\(([^,]+),? ?(([0-9]{4})).*", p.text)
+            if not m:
+                print "Skipped - cannot parse info: " + p.text
             else:
-                m = re.match(".*\\(([^,]+),? ?(([0-9]{4}))?\\).*", p.text)
-                if not m:
-                    m = re.match(".*\\((.+)(, ?([0-9]{4}))\\).*", p.text)
-                if not m:
-                    m = re.match(".*\\(([^,]+),? ?(([0-9]{4})).*", p.text)
-                if not m:
-                    print "Skipped - cannot parse info: " + p.text
-                else:
-                    developer = m.group(1)
-                    year = m.group(3)
-                    screen = screenshot(soup)
-                    yt = youtube(soup)
-                    vim = vimeo(soup)
-                    st = steam(soup)
-                    ap = apple(soup)
-                    goog = google(soup)
-                    w.writerow(enc([name, url, developer, year or "", screen or "", yt or "", vim or "", st or "", ap or "", goog or ""]))
-                    o = {"name": name, "url": url, "developer": developer}
-                    if year:
-                        o["year"] = year
-                    if screen:
-                        o["screenshot"] = screen
-                    if yt:
-                        o["youtube"] = yt
-                    if vim:
-                        o["vimeo"] = vim
-                    if st:
-                        o["steam"] = st
-                    if ap:
-                        o["apple"] = ap
-                    if goog:
-                        o["google"] = goog
-                    json_l.append(o)
-                    print name, url, developer, year or "", screen or "", yt or "", vim or "", st or "", ap or "", goog or ""
+                developer = m.group(1)
+                year = m.group(3)
+                screen = screenshot(soup)
+                yt = youtube(soup)
+                vim = vimeo(soup)
+                st = steam(soup)
+                ap = apple(soup)
+                goog = google(soup)
+                o = {"name": name, "url": url, "developer": developer}
+                if year:
+                    o["year"] = year
+                if screen:
+                    o["screenshot"] = screen
+                if yt:
+                    o["youtube"] = yt
+                if vim:
+                    o["vimeo"] = vim
+                if st:
+                    o["steam"] = st
+                if ap:
+                    o["apple"] = ap
+                if goog:
+                    o["google"] = goog
+                put(json_l, o)
+                print name, url, developer, year or "", screen or "", yt or "", vim or "", st or "", ap or "", goog or ""
 with open("out.json", "w") as f:
     json.dump(json_l, f)
