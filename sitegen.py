@@ -15,45 +15,55 @@ print """<!DOCTYPE html>
         <div class="grid">
 """
 
-import json, re
-
-with open("patch.json") as f:
-    patches = {e["name"]:e for e in json.load(f)}
+import json, re, csv
 
 def get_creators(developer):
     return re.split(" ?[,+/&:] ?", developer)
 
-with open("out.json") as f:
-    games = sorted(json.load(f), key=lambda x: x["year"] if "year" in x else "")[::-1]
+def buyname(url):
+    if "itunes" in url:
+        return "App Store"
+    if "play.google" in url:
+        return "Play Store"
+    if "store.steampowered" in url:
+        return "Steam"
+    if "itch.io" in url:
+        return "itch.io"
+    return "Other Store"
+
+with open("Swiss Video Games - released-swiss-video-games.tsv") as f:
+    games = sorted(csv.DictReader(f, delimiter='\t'), key=lambda x: x["Release Date"] if "Release Date" in x else "")[::-1]
     creator_to_games = {}
     creator_to_id = {}
     id_counter = 1
     for game in games:
-        if game["name"] in patches:
-            for k, v in patches[game["name"]].iteritems():
-                game[k] = v
-        if not "year" in game:
+        for k in list(game.keys()):
+            if not game[k]:
+                del game[k]
+        if not "Release Date" in game:
             continue
-        for k in game:
-            game[k] = game[k].encode('utf-8')
-        cs = get_creators(game["developer"])
+        cs = get_creators(game["Development Studio"])
         for c in cs:
             if not c in creator_to_id:
                 creator_to_id[c] = id_counter
                 id_counter += 1
             if not c in creator_to_games:
-                creator_to_games[c] = [game["name"]]
+                creator_to_games[c] = [game["Identifier"]]
             else:
-                creator_to_games[c].append(game["name"])
+                creator_to_games[c].append(game["Identifier"])
     col_index = 0
     row_index = 0
     print """<div id="row{0}">""".format(row_index)
     for game in games:
-        if not "year" in game:
+        if not "Release Date" in game:
             continue
-        cs = get_creators(game["developer"])
+        if not "Website" in game:
+            continue
+        if not "Trailer Video Link" in game and not "Screenshot Direct Link" in game:
+            continue
+        cs = get_creators(game["Development Studio"])
         print """<div class="game {0}">""".format(" ".join("c" + str(creator_to_id[c]) for c in cs)) 
-        print """<div class="gamename"><a href="{url}">{name}</a></div><div class="developername">""".format(**game)
+        print """<div class="gamename"><a href="{Website}">{Title}</a></div><div class="developername">""".format(**game)
         for c in cs:
             if len(creator_to_games[c]) > 1:
                 print """<span class="creator" onclick="filter_creator({0}, '{1}')">{1}</span>""".format(creator_to_id[c], c.replace("'", "’"))
@@ -61,22 +71,20 @@ with open("out.json") as f:
                 print c
             if c != cs[-1]:
                 print "/ "
-        print """ {year}</div>""".format(**game)
-        if "vimeo" in game:
-            print """<iframe class="ytframe" src="{0}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>""".format(game["vimeo"].replace("autoplay=1", "autoplay=0"))
-        elif "youtube" in game:
-            print """<iframe class="ytframe" src="https://www.youtube.com/embed/{0}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>""".format(game["youtube"].replace("https://www.youtube.com/watch?v=", "").split("?")[0])
-        elif "screenshot" in game:
-            print """<div class="screenshotcontainer"><a href="{url}"><img src="{screenshot}"></a></div>""".format(**game)
+        print """ {Release Date}</div>""".format(**game)
+        if "Trailer Video Link" in game:
+            if "youtube" in game["Trailer Video Link"]:
+                print """<iframe class="ytframe" src="https://www.youtube.com/embed/{0}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>""".format(game["Trailer Video Link"].replace("https://www.youtube.com/watch?v=", "").split("?")[0])
+            elif "vimeo" in game["Trailer Video Link"]:
+                print """<iframe class="ytframe" src="{0}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>""".format(game["Trailer Video Link"].replace("autoplay=1", "autoplay=0"))
+        elif "Screenshot Direct Link" in game:
+            print """<div class="screenshotcontainer"><a href="{Website}"><img src="{Screenshot Direct Link}"></a></div>""".format(**game)
         else:
             print """<div class="noscreenshot">&nbsp;</div>"""
         print """<div class="buy">"""
-        if "apple" in game:
-            print """<a href="{apple}" class="apple">App Store</a>""".format(**game)
-        if "google" in game:
-            print """<a href="{google}" class="google">Google Play</a>""".format(**game)
-        if "steam" in game:
-            print """<a href="{steam}" class="apple">Steam</a>""".format(**game)
+        if "Store" in game:
+            for st in game["Store"].split(","):
+                print """<a href="{0}" class="store">{1}</a>""".format(st, buyname(st))
         print """</div></div>"""
         col_index += 1
         if col_index == 3:

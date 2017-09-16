@@ -1,0 +1,116 @@
+html {
+    background: url('img/swisstiles-dark.png');
+    height: 100%;
+}
+
+a, a:link, a:visited {
+    color: #d52b1e;
+}
+
+a:hover, a:active {
+    color: #f94f42;   
+}
+
+body {
+    font-size: 1.3vw;
+    line-height: 1.3;
+    font-family: Raleway, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+    font-weight: normal;
+    font-size: 35pt;
+}
+
+.content {
+    margin: auto;
+    width: 44em;
+    background-color: rgba(255, 255, 255, 0.67);
+}
+
+.card {
+    margin: auto;
+    width: 36em;
+    padding: 2em;
+    margin-bottom: 2em;
+    background-color: white;
+}
+
+div.card_picture {
+    width: 24em;
+    height: 13.5em;
+    margin-right: 2em;
+    float: left;
+    overflow: hidden;
+}
+
+img.card_picture {
+    width: 100%;
+    min-height: 100%;
+}
+
+iframe.card_yt, iframe.card_vimeo {
+    width: 100%;
+    height: 100%;
+}
+
+h2.card_title {
+    margin: 0;
+    margin-bottom: 1em;
+    font-weight: normal;
+    font-size: 21pt;
+}
+
+.info {
+    text-align: center;
+    padding-bottom: 3em;
+}
+
+/* Big bits */
+
+.big_card {
+    margin: auto;
+    width: 50em;
+    padding: 2em;
+    margin-bottom: 2em;
+    background-color: white;
+}
+
+div.big_card_left {
+    width: 32em;
+    float: left;
+    margin-right: 2em;
+}
+
+div.big_card_picture {
+    width: 32em;
+    height: 18em;
+    overflow: hidden;
+}
+
+img.big_card_picture {
+    width: 100%;
+    min-height: 100%;
+}
+
+iframe.big_card_yt, big_iframe.card_vimeo {
+    width: 100%;
+    height: 100%;
+}
+
+.back {
+    text-align: center;
+}
+
+.big_content {
+    margin: auto;
+    width: 58em;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.67);
+}
