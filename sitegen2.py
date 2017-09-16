@@ -22,7 +22,7 @@ def img(url):
         fmt = "png"
         dst = dst + ".png"
     if not os.path.exists(original):
-        print "Getting", url
+        print "Getting", url, original
         r = requests.get(url, timeout=8)
         if r.status_code == 200:
             with open(original, 'wb') as f:
@@ -39,6 +39,9 @@ def img(url):
             print "Failed to resize", original
             return original
     return dst
+
+def has_img(url):
+    return img(url) != "img/unknown.png"
 
 M_HEADER = """<!DOCTYPE html>
 <html>
@@ -155,9 +158,9 @@ with open("index.html", "w") as f:
         w('<div id="{Identifier}_card" class="card">')
         w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
         w('<div class="card_picture">')
-        if "Box Art Direct Link" in g:
+        if "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
             w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Box Art Direct Link"]))
-        elif "Screenshot Direct Link" in g:
+        elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
             w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Screenshot Direct Link"]))
         elif "Trailer Video Link" in g:
             tvl = g["Trailer Video Link"]
@@ -165,7 +168,7 @@ with open("index.html", "w") as f:
                 w('<iframe class="card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
             elif "vimeo" in tvl:
                 w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
-        elif "Logo Direct Link" in g:
+        elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
             w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Logo Direct Link"]))
         w('</div>')
         w('<div class="card_details">')
@@ -206,11 +209,11 @@ with open("index.html", "w") as f:
                     w('<iframe class="big_card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
                 elif "vimeo" in tvl:
                     w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="big_card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
-            elif "Box Art Direct Link" in g:
+            elif "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
                 w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Box Art Direct Link"]))
-            elif "Screenshot Direct Link" in g:
+            elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
                 w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Screenshot Direct Link"]))
-            elif "Logo Direct Link" in g:
+            elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
                 w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Logo Direct Link"]))
             w('</div>')
             w('<p>{desc}</p>', desc=g["Description"].replace("\n", "<br") if "Description" in g else "")
@@ -251,7 +254,10 @@ with open("index.html", "w") as f:
             if "Press Kit" in g:
                 w('<p><a href="{Presskit}">Press Kit</a></p>')
             if "Twitter" in g:
-                w('<p><a href="{Twitter}">Twitter</a></p>')
+                if "@" in g["Twitter"]:
+                    w('<p><a href="https://twitter.com/{name}">Twitter</a></p>', name=g["Twitter"].replace("@", ""))
+                else:
+                    w('<p><a href="{Twitter}">Twitter</a></p>')
             if "Article Links" in g:
                 w('<p>Articles:')
                 w('<ul>')
