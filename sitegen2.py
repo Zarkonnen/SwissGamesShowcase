@@ -170,6 +170,8 @@ with open("index.html", "w") as f:
                 w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
         elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
             w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Logo Direct Link"]))
+        else:
+            w('<a href="{Identifier}.html"><img src="img/unknown.png" class="card_picture"></a>')
         w('</div>')
         w('<div class="card_details">')
         w('<p>{Development Studio}</p>')
