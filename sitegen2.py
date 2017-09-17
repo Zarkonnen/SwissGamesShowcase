@@ -33,7 +33,8 @@ def img(url):
             return "img/unknown.png"
     if not os.path.exists(dst):
         try:
-            subprocess.check_output(["java", "-cp", ".", "Resize", original, "480", "270", dst, fmt])
+            subprocess.check_output(["java", "-cp", ".", "Resize", original, "400", "225", dst, fmt])
+            subprocess.check_output(["java", "-cp", ".", "Resize", original, "800", "450", "big-" + dst, fmt])
             print "->", dst
         except:
             print "Failed to resize", original
@@ -153,15 +154,16 @@ with open("report.txt", "w") as report:
     creator_to_id = {}
     id_counter = 1
     for game in games:
-        cs = get_creators(game["Development Studio"])
-        for c in cs:
-            if not c in creator_to_id:
-                creator_to_id[c] = id_counter
-                id_counter += 1
-            if not c in creator_to_games:
-                creator_to_games[c] = [game["Identifier"]]
-            else:
-                creator_to_games[c].append(game["Identifier"])
+        if "Development Studio" in game:
+            cs = get_creators(game["Development Studio"])
+            for c in cs:
+                if not c in creator_to_id:
+                    creator_to_id[c] = id_counter
+                    id_counter += 1
+                if not c in creator_to_games:
+                    creator_to_games[c] = [game["Identifier"]]
+                else:
+                    creator_to_games[c].append(game["Identifier"])
 
     # Generate site
     with open("index.html", "w") as f:
@@ -195,7 +197,8 @@ with open("report.txt", "w") as report:
             w('</div>')
             w('<div class="card_details">')
             w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
-            w('<p>{Development Studio}</p>')
+            if "Development Studio" in g:
+                w('<p>{Development Studio}</p>')
             if "Release Date" in g:
                 w('<p>{Release Date}</p>')
             else:
@@ -233,16 +236,17 @@ with open("report.txt", "w") as report:
                     elif "vimeo" in tvl:
                         w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="big_card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
                 elif "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
-                    w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Box Art Direct Link"]))
+                    w('<a href="{Identifier}.html"><img src="big-{src}" class="big_card_picture"></a>', src=img(g["Box Art Direct Link"]))
                 elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
-                    w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Screenshot Direct Link"]))
+                    w('<a href="{Identifier}.html"><img src="big-{src}" class="big_card_picture"></a>', src=img(g["Screenshot Direct Link"]))
                 elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
-                    w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Logo Direct Link"]))
+                    w('<a href="{Identifier}.html"><img src="big-{src}" class="big_card_picture"></a>', src=img(g["Logo Direct Link"]))
                 w('</div>')
                 w('<p>{desc}</p>', desc=g["Description"].replace("\n", "<br") if "Description" in g else "")
                 w('</div>')
                 w('<div class="big_card_details">')
-                w('<p>Developer: {Development Studio}</p>')
+                if "Development Studio" in g:
+                    w('<p>Developer: {Development Studio}</p>')
                 if "Publisher" in g:
                     w('<p>Publisher: {Publisher}</p>')
                 if "Sponsor" in g:

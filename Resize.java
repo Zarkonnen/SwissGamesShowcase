@@ -26,6 +26,20 @@ public class Resize {
         }
         BufferedImage b2 = new BufferedImage(tw, th, args[4].equals("png") ? BufferedImage.TYPE_INT_ARGB : BufferedImage.TYPE_3BYTE_BGR);
         b2.getGraphics().drawImage(b, tx, ty, null);
-        ImageIO.write(b2, args[4], new File(args[3]));
+        if (b2.getWidth() > w * 2) {
+            int newW = b2.getWidth();
+            int newH = b2.getHeight();
+            int downscale = 1;
+            while (newW > w * 2) {
+                newW /= 2;
+                newH /= 2;
+                downscale *= 2;
+            }
+            BufferedImage b3 = new BufferedImage(newW, newH, args[4].equals("png") ? BufferedImage.TYPE_INT_ARGB : BufferedImage.TYPE_3BYTE_BGR);
+            b3.getGraphics().drawImage(b2, 0, 0, newW, newH, null);
+            ImageIO.write(b3, args[4], new File(args[3]));
+        } else {
+            ImageIO.write(b2, args[4], new File(args[3]));
+        }
     }
 }
