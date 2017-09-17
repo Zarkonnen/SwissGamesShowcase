@@ -128,113 +128,79 @@ for game in games:
 games.sort(key=sort_date)
 games = games[::-1]
 
-games = [g for g in games if ("Release Date" in g or "Early Access Date" in g) and "Website" in g and ("Trailer Video Link" in g or "Screenshot Direct Link" in g or "Box Art Direct Link" in g)]
-
-# Index by creator
-creator_to_games = {}
-creator_to_id = {}
-id_counter = 1
-for game in games:
-    cs = get_creators(game["Development Studio"])
-    for c in cs:
-        if not c in creator_to_id:
-            creator_to_id[c] = id_counter
-            id_counter += 1
-        if not c in creator_to_games:
-            creator_to_games[c] = [game["Identifier"]]
-        else:
-            creator_to_games[c].append(game["Identifier"])
-
-# Generate site
-with open("index.html", "w") as f:
-    f.write(M_HEADER)
-
+with open("report.txt", "w") as report:
     for g in games:
-        def w(s, **kwargs):
-            info = g.copy()
-            info.update(kwargs)
-            f.write(s.format(**info))
+        if not "Title" in g:
+            continue
+        title = g["Title"]
+        if not ("Release Date" in g or "Early Access Date" in g):
+            report.write(title + ": No release or early access date.\n")
+        if not "Website" in g:
+            report.write(title + ": No website.\n")
+        if not "Store" in g and not "Source" in g and not "Online Play" in g and not "Download Page" in g and not "Direct Download" in g:
+            report.write(title + ": No store, source, online play or download links.\n")
+        if not "Description" in g:
+            report.write(title + ": No description.\n")
+        if not ("Trailer Video Link" in g or "Screenshot Direct Link" in g or "Box Art Direct Link" in g):
+            report.write(title + ": No trailer, screenshot, or box art.\n")
+        else:
+            if not ("Screenshot Direct Link" in g or "Box Art Direct Link" in g):
+                report.write(title + ": No screenshot or box art.\n")
+    games = [g for g in games if "Title" in g and ("Release Date" in g or "Early Access Date" in g) and ("Trailer Video Link" in g or "Screenshot Direct Link" in g or "Box Art Direct Link" in g)]
 
-        w('<div id="{Identifier}_card" class="card">')
-        w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
-        w('<div class="card_picture">')
-        if "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
-            w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Box Art Direct Link"]))
-        elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
-            w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Screenshot Direct Link"]))
-        elif "Trailer Video Link" in g:
-            tvl = g["Trailer Video Link"]
-            if "youtube" in tvl:
-                w('<iframe class="card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
-            elif "vimeo" in tvl:
-                w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
-        elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
-            w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Logo Direct Link"]))
-        else:
-            w('<a href="{Identifier}.html"><img src="img/unknown.png" class="card_picture"></a>')
-        w('</div>')
-        w('<div class="card_details">')
-        w('<p>{Development Studio}</p>')
-        if "Release Date" in g:
-            w('<p>{Release Date}</p>')
-        else:
-            w('<p>{Early Access Date}</p>')
-        w('<p>{Platforms}</p>')
-        if "Online Play" in g:
-            w('<p><a href="{Online Play}">Play Online</a></p>')
-        if "Download Page" in g:
-            w('<p><a href="{Download Page}">Download</a></p>')
-        if "Direct Download" in g:
-            w('<p><a href="{Direct Download}">Download</a></p>')
-        if "Store" in g:
-            w('<p>')
-            stores = [s.strip() for s in g["Store"].split(",")]
-            for s in stores:
-                w('<a href="{link}">{name}</a>', name=store_name(s), link=s)
-                if not s == stores[-1]:
-                    w(', ')
-            w('</p>')
-        w('</div>')
-        w('<div style="clear: both;"></div>')
-        w('</div>')
-        with open(g["Identifier"] + ".html", "w") as f2:
+    # Index by creator
+    creator_to_games = {}
+    creator_to_id = {}
+    id_counter = 1
+    for game in games:
+        cs = get_creators(game["Development Studio"])
+        for c in cs:
+            if not c in creator_to_id:
+                creator_to_id[c] = id_counter
+                id_counter += 1
+            if not c in creator_to_games:
+                creator_to_games[c] = [game["Identifier"]]
+            else:
+                creator_to_games[c].append(game["Identifier"])
+
+    # Generate site
+    with open("index.html", "w") as f:
+        f.write(M_HEADER)
+
+        for g in games:
             def w(s, **kwargs):
                 info = g.copy()
                 info.update(kwargs)
-                f2.write(s.format(**info))
-            w(P_HEADER)
-            w('<div class="big_card_left">')
-            w('<div class="big_card_picture">')
-            if "Trailer Video Link" in g:
+                f.write(s.format(**info))
+
+            w('<div id="{Identifier}_card" class="card">')
+            w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
+            w('<div class="card_picture">')
+            if "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
+                w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Box Art Direct Link"]))
+            elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
+                w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Screenshot Direct Link"]))
+            elif "Trailer Video Link" in g:
                 tvl = g["Trailer Video Link"]
                 if "youtube" in tvl:
-                    w('<iframe class="big_card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
+                    w('<iframe class="card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
                 elif "vimeo" in tvl:
-                    w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="big_card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
-            elif "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
-                w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Box Art Direct Link"]))
-            elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
-                w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Screenshot Direct Link"]))
+                    w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
+                else:
+                    report.write(g["Title"] + ": Unknown trailer URL format.\n")
             elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
-                w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Logo Direct Link"]))
+                w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Logo Direct Link"]))
+            else:
+                w('<a href="{Identifier}.html"><img src="img/unknown.png" class="card_picture"></a>')
+                report.write(g["Title"] + ": Unable to fetch images.\n")
             w('</div>')
-            w('<p>{desc}</p>', desc=g["Description"].replace("\n", "<br") if "Description" in g else "")
-            w('</div>')
-            w('<div class="big_card_details">')
-            w('<p>Developer: {Development Studio}</p>')
-            if "Publisher" in g:
-                w('<p>Publisher: {Publisher}</p>')
-            if "Sponsor" in g:
-                w('<p>Sponsor: {Sponsor}</p>')
+            w('<div class="card_details">')
+            w('<p>{Development Studio}</p>')
             if "Release Date" in g:
-                w('<p>Release Date: {Release Date}</p>')
-            if "Early Access Date" in g:
-                w('<p>Early Access Date: {Early Access Date}</p>')
-            w('<p>Platforms: {Platforms}</p>')
-            if "Awards" in g:
-                w('<p>Awards: {Awards}</p>')
-            if "Website" in g:
-                w('<p><a href="{Website}">Website</a></p>')
+                w('<p>{Release Date}</p>')
+            else:
+                w('<p>{Early Access Date}</p>')
+            w('<p>{Platforms}</p>')
             if "Online Play" in g:
                 w('<p><a href="{Online Play}">Play Online</a></p>')
             if "Download Page" in g:
@@ -249,26 +215,81 @@ with open("index.html", "w") as f:
                     if not s == stores[-1]:
                         w(', ')
                 w('</p>')
-            if "Source" in g:
-                w('<p><a href="{Source}">Source</a></p>')
-            if "Development Log" in g:
-                w('<p><a href="{Development Log}">Development Log</a></p>')
-            if "Press Kit" in g:
-                w('<p><a href="{Presskit}">Press Kit</a></p>')
-            if "Twitter" in g:
-                if "@" in g["Twitter"]:
-                    w('<p><a href="https://twitter.com/{name}">Twitter</a></p>', name=g["Twitter"].replace("@", ""))
-                else:
-                    w('<p><a href="{Twitter}">Twitter</a></p>')
-            if "Article Links" in g:
-                w('<p>Articles:')
-                w('<ul>')
-                for a in g["Article Links"].split(","):
-                    a = a.strip()
-                    w('<li><a href="{link}">{name}</a></li>', link=a, name=a.replace("https://", "").replace("http://", "").replace("www.", "").split(".")[0])
-                w('</ul></p>')
             w('</div>')
             w('<div style="clear: both;"></div>')
-            w(P_FOOTER)
+            w('</div>')
+            with open(g["Identifier"] + ".html", "w") as f2:
+                def w(s, **kwargs):
+                    info = g.copy()
+                    info.update(kwargs)
+                    f2.write(s.format(**info))
+                w(P_HEADER)
+                w('<div class="big_card_left">')
+                w('<div class="big_card_picture">')
+                if "Trailer Video Link" in g:
+                    tvl = g["Trailer Video Link"]
+                    if "youtube" in tvl:
+                        w('<iframe class="big_card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
+                    elif "vimeo" in tvl:
+                        w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="big_card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
+                elif "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
+                    w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Box Art Direct Link"]))
+                elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
+                    w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Screenshot Direct Link"]))
+                elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
+                    w('<a href="{Identifier}.html"><img src="{src}" class="big_card_picture"></a>', src=img(g["Logo Direct Link"]))
+                w('</div>')
+                w('<p>{desc}</p>', desc=g["Description"].replace("\n", "<br") if "Description" in g else "")
+                w('</div>')
+                w('<div class="big_card_details">')
+                w('<p>Developer: {Development Studio}</p>')
+                if "Publisher" in g:
+                    w('<p>Publisher: {Publisher}</p>')
+                if "Sponsor" in g:
+                    w('<p>Sponsor: {Sponsor}</p>')
+                if "Release Date" in g:
+                    w('<p>Release Date: {Release Date}</p>')
+                if "Early Access Date" in g:
+                    w('<p>Early Access Date: {Early Access Date}</p>')
+                w('<p>Platforms: {Platforms}</p>')
+                if "Awards" in g:
+                    w('<p>Awards: {Awards}</p>')
+                if "Website" in g:
+                    w('<p><a href="{Website}">Website</a></p>')
+                if "Online Play" in g:
+                    w('<p><a href="{Online Play}">Play Online</a></p>')
+                if "Download Page" in g:
+                    w('<p><a href="{Download Page}">Download</a></p>')
+                if "Direct Download" in g:
+                    w('<p><a href="{Direct Download}">Download</a></p>')
+                if "Store" in g:
+                    w('<p>')
+                    stores = [s.strip() for s in g["Store"].split(",")]
+                    for s in stores:
+                        w('<a href="{link}">{name}</a>', name=store_name(s), link=s)
+                        if not s == stores[-1]:
+                            w(', ')
+                    w('</p>')
+                if "Source" in g:
+                    w('<p><a href="{Source}">Source</a></p>')
+                if "Development Log" in g:
+                    w('<p><a href="{Development Log}">Development Log</a></p>')
+                if "Press Kit" in g:
+                    w('<p><a href="{Presskit}">Press Kit</a></p>')
+                if "Twitter" in g:
+                    if "@" in g["Twitter"]:
+                        w('<p><a href="https://twitter.com/{name}">Twitter</a></p>', name=g["Twitter"].replace("@", ""))
+                    else:
+                        w('<p><a href="{Twitter}">Twitter</a></p>')
+                if "Article Links" in g:
+                    w('<p>Articles:')
+                    w('<ul>')
+                    for a in g["Article Links"].split(","):
+                        a = a.strip()
+                        w('<li><a href="{link}">{name}</a></li>', link=a, name=a.replace("https://", "").replace("http://", "").replace("www.", "").split(".")[0])
+                    w('</ul></p>')
+                w('</div>')
+                w('<div style="clear: both;"></div>')
+                w(P_FOOTER)
 
-    f.write(M_FOOTER)
+        f.write(M_FOOTER)

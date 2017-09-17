@@ -25,7 +25,7 @@ h1 {
     margin: 0;
     padding: 1em;
     font-weight: normal;
-    font-size: 35pt;
+    font-size: 2.5vw;
 }
 
 .content {
@@ -64,7 +64,7 @@ h2.card_title {
     margin: 0;
     margin-bottom: 1em;
     font-weight: normal;
-    font-size: 21pt;
+    font-size: 1.95vw;
 }
 
 .info {
