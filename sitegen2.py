@@ -174,7 +174,6 @@ with open("report.txt", "w") as report:
                 f.write(s.format(**info))
 
             w('<div id="{Identifier}_card" class="card">')
-            w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
             w('<div class="card_picture">')
             if "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
                 w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Box Art Direct Link"]))
@@ -195,6 +194,7 @@ with open("report.txt", "w") as report:
                 report.write(g["Title"] + ": Unable to fetch images.\n")
             w('</div>')
             w('<div class="card_details">')
+            w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
             w('<p>{Development Studio}</p>')
             if "Release Date" in g:
                 w('<p>{Release Date}</p>')
