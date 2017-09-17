@@ -1,71 +1,9 @@
-a nifty game: No description.
-Towaga: No screenshot or box art.
-Galaxy Invaders VR: No store, source, online play or download links.
-Watch your Back: No store, source, online play or download links.
-Watch your Back: No description.
-Vote for me: No store, source, online play or download links.
-Vote for me: No description.
-Transport Fever: No store, source, online play or download links.
-Transport Fever: No description.
-Transport Fever: No trailer, screenshot, or box art.
-Tower of Babel: No store, source, online play or download links.
-Tower of Babel: No description.
-Tower of Babel: No trailer, screenshot, or box art.
-The Labyrinth of Kawarigami: No store, source, online play or download links.
-The Labyrinth of Kawarigami: No description.
-The Labyrinth of Kawarigami: No trailer, screenshot, or box art.
-SuperAirSlam: No store, source, online play or download links.
-SuperAirSlam: No description.
-SuperAirSlam: No trailer, screenshot, or box art.
-Super: No store, source, online play or download links.
-Super: No description.
-Super: No trailer, screenshot, or box art.
-Stonebond: The Gargoyle's Domain: No website.
-Stonebond: The Gargoyle's Domain: No screenshot or box art.
-Silly World Series: No store, source, online play or download links.
-ServantS: No store, source, online play or download links.
-ServantS: No description.
-ServantS: No trailer, screenshot, or box art.
-Plug and Play: No store, source, online play or download links.
-Plug and Play: No description.
-Plug and Play: No trailer, screenshot, or box art.
-Opiniongames: No store, source, online play or download links.
-Opiniongames: No description.
-Opiniongames: No trailer, screenshot, or box art.
+FAR: Lone Sails: No description.
+FAR: Lone Sails: No trailer, screenshot, or box art.
 Oniland: No store, source, online play or download links.
-Oniland: No description.
-Oniland: No trailer, screenshot, or box art.
-Mehr Platz für Dich: No store, source, online play or download links.
-Late Shift: No store, source, online play or download links.
-Late Shift: No description.
-Late Shift: No trailer, screenshot, or box art.
-FILD: Renegade Monsters: No description.
-FILD: Renegade Monsters: No screenshot or box art.
-Decodoku: No trailer, screenshot, or box art.
-CowFight - Combat de Reines: No store, source, online play or download links.
-CowFight - Combat de Reines: No description.
-CowFight - Combat de Reines: No trailer, screenshot, or box art.
-Cloud Chasers - Journey of Hope: No store, source, online play or download links.
-Maison Kanraku: The Second Climax: No trailer, screenshot, or box art.
-Yamy et les Aliments: No store, source, online play or download links.
-Yamy et les Aliments: No description.
-YAMGUN: No store, source, online play or download links.
-YAMGUN: No description.
-Unmem Alphaness: No store, source, online play or download links.
-Unmem Alphaness: No description.
-U2U: No store, source, online play or download links.
-U2U: No description.
-U2U: No screenshot or box art.
-The Unstoppables: No store, source, online play or download links.
-The Unstoppables: No description.
-The Unstoppables: No trailer, screenshot, or box art.
-Planet Diver: No store, source, online play or download links.
-Planet Diver: No description.
-Planet Diver: No trailer, screenshot, or box art.
-Octout: No screenshot or box art.
-Gross. Stadt. Jagd.: No store, source, online play or download links.
-Gross. Stadt. Jagd.: No description.
-Gross. Stadt. Jagd.: No trailer, screenshot, or box art.
+Galaxy Invaders VR: No store, source, online play or download links.
+Tower of Babel: No store, source, online play or download links.
+Super Fleet Manager: No store, source, online play or download links.
 Fresh Food Runner: No store, source, online play or download links.
 Fresh Food Runner: No description.
 Fresh Food Runner: No trailer, screenshot, or box art.
@@ -487,9 +425,6 @@ Farewell: No release or early access date.
 Farewell: No website.
 Farewell: No store, source, online play or download links.
 Farewell: No screenshot or box art.
-FAR: Lone Sails: No release or early access date.
-FAR: Lone Sails: No description.
-FAR: Lone Sails: No trailer, screenshot, or box art.
 Galaxy Invaders VR: Unable to fetch images.
 S**thead: Unknown trailer URL format.
 BlockDuel: Unable to fetch images.
