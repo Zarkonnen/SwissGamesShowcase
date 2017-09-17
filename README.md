@@ -1,18 +1,18 @@
 Swiss Games Showcase
 --------------------
-A website made to show off the work of the growing Swiss computer game scene. The basis of the site is a [crowdsourced list](https://docs.google.com/document/d/1-BlXLSE8LImgajJB5DWvMkbupmBPU8EnEs6JEfjwHJs/edit) of Swiss games. This list is parsed, and additional information on each game is automatically gathered. Finally, a static showcase page is generated.
+A website made to show off the work of the growing Swiss computer game scene. The basis of the site is a [crowdsourced table](https://docs.google.com/spreadsheets/d/1pWOGpADxvNEWcYnpTFpCyhS9rtIjCYgIdZmBppDkC2Q/edit?usp=sharing) of Swiss games.
 
 ### Additions and Improvements
-Want to add your game to this site? Add it to the list, make sure it has a year attached, and [email me](mailto:zarkonnen@gmail.com). Want to improve a game listing with a better screenshot, a video, buy links, etc? Make a pull request for patch.json, or email me.
+Want to add a game to this site? Add it to the table! We're especially looking for older games, pre-2010. Any game that was publicly available in some fashion and was created in Switzerland should be included.
 
 ### Setup
-Running the project requires Python, Java, and the beautifulsoup4 and requests Python libraries. Both libraries can be installed via pip. Also, create a "tmp" directory to act as a cache for downloaded images.
+Running the project requires Python, Java, and the requests library. Also, create a "tmp" directory to act as a cache for downloaded images.
 
 ### Usage
-* Re-export the list of Swiss games to HTML and save it as `ReleasedSwissVideoGames.html`.
-* Invoke `python crawl.py`. This will parse the HTML file and crawl the games' sites for media. This process takes a while and results in `out.csv`and `out.json`, two structured lists of information about the games.
-* You can edit `patch.json` to add information to the generated output or fix mistakes, which will override info for the next step.
-* Invoke `python sitegen.py` to re-generate `index.html`.
+* Re-export the table of Swiss games to TSV and save it as `Swiss Video Games - released-swiss-video-games.tsv`.
+* Invoke `python sitegen2.py` to re-generate the site.
 
 ### About
 This project was created by [David Stark](http://www.zarkonnen.com) for the [1st Swiss Open Cultural Data Hackathon](http://make.opendata.ch/wiki/event:2015-02) 2015.
+
+It was then extended by David Stark, Karine Delvert, Selim Krichane, Oleg Lavrovsky, Frédéric Noyer, Isaac Pante, Yannick Rochat and Oliver Waddell for the [3rd OpenGLAM Hackathon](http://make.opendata.ch/wiki/project:swissvideogamesdirectory) in 2017.
