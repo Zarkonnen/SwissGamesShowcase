@@ -1,5 +1,10 @@
+Dédalopole: No description.
+Dédalopole: No trailer, screenshot, or box art.
 Oniland: No store, source, online play or download links.
 Galaxy Invaders VR: No store, source, online play or download links.
+Weddinvaders: No website.
+Weddinvaders: No description.
+Weddinvaders: No trailer, screenshot, or box art.
 Super Fleet Manager: No store, source, online play or download links.
 Frechmax - Auf Fotojagd: No store, source, online play or download links.
 Frechmax - Auf Fotojagd: No description.
@@ -40,6 +45,9 @@ Stardust: No store, source, online play or download links.
 Stardust: No description.
 Stardust: No trailer, screenshot, or box art.
 Splink: No store, source, online play or download links.
+MonsterUp Flap: No store, source, online play or download links.
+MonsterUp Colors: No store, source, online play or download links.
+MonsterUp Adventures: No store, source, online play or download links.
 Joe’s Heart: No store, source, online play or download links.
 Joe’s Heart: No trailer, screenshot, or box art.
 gyroboost: No store, source, online play or download links.
@@ -59,10 +67,8 @@ Digibug: No description.
 Cheese Luise: No store, source, online play or download links.
 Cheese Luise: No description.
 Cheese Luise: No trailer, screenshot, or box art.
-MonsterUp Flap: No store, source, online play or download links.
-MonsterUp Colors: No store, source, online play or download links.
-MonsterUp Adventures: No store, source, online play or download links.
 Armadillo: No screenshot or box art.
+MonsterUp: No store, source, online play or download links.
 Magnetics: No store, source, online play or download links.
 Magnetics: No description.
 Hollow Grounds: No description.
@@ -83,7 +89,6 @@ Byebye Mosquito: No trailer, screenshot, or box art.
 BOXO: No trailer, screenshot, or box art.
 Atomarium: No website.
 Atomarium: No screenshot or box art.
-MonsterUp: No store, source, online play or download links.
 SkyRider: No store, source, online play or download links.
 Plopp: No description.
 Plopp: No screenshot or box art.
@@ -97,11 +102,11 @@ Groox: No description.
 Groox: No trailer, screenshot, or box art.
 DMBX series: No description.
 DMBX series: No trailer, screenshot, or box art.
+Dice Hockey: No description.
 Coop Sternenflug: No store, source, online play or download links.
 Coop Sternenflug: No description.
 Coop Sternenflug: No trailer, screenshot, or box art.
 Awwware: No store, source, online play or download links.
-Dice Hockey: No description.
 The Path of Go: No website.
 Zwirn: No screenshot or box art.
 Vision Village: No store, source, online play or download links.
@@ -111,24 +116,24 @@ Moonga: No store, source, online play or download links.
 Mirage: No store, source, online play or download links.
 Laichenberg: No store, source, online play or download links.
 Gbanga Famiglia: No store, source, online play or download links.
-Before the Satellite detects you: No store, source, online play or download links.
 Gabarello: No store, source, online play or download links.
 Gabarello: No description.
+Before the Satellite detects you: No store, source, online play or download links.
 Amanzivision: No store, source, online play or download links.
 Amanzivision: No description.
 Amanzivision: No trailer, screenshot, or box art.
 Spirit Fever: No store, source, online play or download links.
+Straight, No Chaser: No screenshot or box art.
 Helsana: No store, source, online play or download links.
 Gbanga Zooh: No store, source, online play or download links.
 Gbanga Zooh: No screenshot or box art.
 Isudoku: No store, source, online play or download links.
-Isudoku: No description.
-Isudoku: No trailer, screenshot, or box art.
 Darts 2008: No store, source, online play or download links.
 Darts 2008: No description.
 Darts 2008: No trailer, screenshot, or box art.
 Midnight Riders: No store, source, online play or download links.
 Midnight Riders: No description.
+Sex Appeal Test: No store, source, online play or download links.
 Bubble Islands: No store, source, online play or download links.
 Bubble Islands: No description.
 Bom chicka wah wah: No store, source, online play or download links.
@@ -137,7 +142,6 @@ Bom chicka wah wah: No trailer, screenshot, or box art.
 Billard: No store, source, online play or download links.
 Billard: No description.
 Billard: No trailer, screenshot, or box art.
-Sex Appeal Test: No store, source, online play or download links.
 Queuing: No store, source, online play or download links.
 Queuing: No description.
 Queuing: No trailer, screenshot, or box art.
@@ -182,9 +186,6 @@ Streamf1sh1ng: No store, source, online play or download links.
 Orbital: No store, source, online play or download links.
 Orbital: No description.
 Orbital: No trailer, screenshot, or box art.
-I Misteri di Maggia: No store, source, online play or download links.
-I Misteri di Maggia: No description.
-I Misteri di Maggia: No trailer, screenshot, or box art.
 Home Run: No store, source, online play or download links.
 Home Run: No description.
 Home Run: No trailer, screenshot, or box art.
@@ -197,7 +198,41 @@ Berlin Chaos: No trailer, screenshot, or box art.
 Babe Rally: No store, source, online play or download links.
 Babe Rally: No description.
 Babe Rally: No trailer, screenshot, or box art.
+Speedy Eggbert 2: No store, source, online play or download links.
 Ravage: No store, source, online play or download links.
+Blupi Explorateur: No website.
+Blupi Explorateur: No store, source, online play or download links.
+Traps'n'Treasures: No website.
+Traps'n'Treasures: No store, source, online play or download links.
+Traps'n'Treasures: No description.
+The Game of Life: No website.
+The Game of Life: No store, source, online play or download links.
+The Game of Life: No description.
+Rolling Ronny: No website.
+Rolling Ronny: No store, source, online play or download links.
+Rolling Ronny: No description.
+Clown-o-Mania: No website.
+Clown-o-Mania: No store, source, online play or download links.
+Leonardo: No website.
+Leonardo: No store, source, online play or download links.
+Leonardo: No description.
+Crack: No website.
+Crack: No store, source, online play or download links.
+Crack: No description.
+Dugger: No website.
+Dugger: No store, source, online play or download links.
+Dugger: No description.
+Blupi at Home: No store, source, online play or download links.
+War Heli: No website.
+War Heli: No store, source, online play or download links.
+War Heli: No description.
+Jeu d'échecs: No store, source, online play or download links.
+Jeu d'échecs: No description.
+Nim: No store, source, online play or download links.
+Scooter!: No release or early access date.
+Scooter!: No website.
+Scooter!: No store, source, online play or download links.
+Scooter!: No description.
 Trigger Rally: No release or early access date.
 Trigger Rally: No store, source, online play or download links.
 Trigger Rally: No description.
@@ -234,6 +269,10 @@ Oniri Islands: No website.
 Oniri Islands: No store, source, online play or download links.
 Oniri Islands: No description.
 Oniri Islands: No screenshot or box art.
+Nimbatus - The Space Drone Constructor: No release or early access date.
+Nimbatus - The Space Drone Constructor: No store, source, online play or download links.
+Nimbatus - The Space Drone Constructor: No description.
+Nimbatus - The Space Drone Constructor: No trailer, screenshot, or box art.
 Ned & Ted: No release or early access date.
 Ned & Ted: No website.
 Ned & Ted: No store, source, online play or download links.
@@ -243,6 +282,7 @@ MyTP series: No release or early access date.
 MyTP series: No store, source, online play or download links.
 MyTP series: No description.
 MyTP series: No trailer, screenshot, or box art.
+Memowizz: No release or early access date.
 Lowboat: No release or early access date.
 Lowboat: No website.
 Lowboat: No store, source, online play or download links.
@@ -262,20 +302,21 @@ Identity Crisis: No website.
 Identity Crisis: No store, source, online play or download links.
 Identity Crisis: No description.
 Identity Crisis: No screenshot or box art.
+Helvetii: No release or early access date.
+Helvetii: No store, source, online play or download links.
+Helvetii: No description.
+Flux: No release or early access date.
+Flux: No store, source, online play or download links.
 Farewell: No release or early access date.
 Farewell: No website.
 Farewell: No store, source, online play or download links.
 Farewell: No screenshot or box art.
-Helvetii: No release or early access date.
-Helvetii: No store, source, online play or download links.
-Helvetii: No description.
-Nimbatus - The Space Drone Constructor: No release or early access date.
-Nimbatus - The Space Drone Constructor: No store, source, online play or download links.
-Nimbatus - The Space Drone Constructor: No description.
-Nimbatus - The Space Drone Constructor: No trailer, screenshot, or box art.
-Flux: No release or early access date.
-Flux: No store, source, online play or download links.
 FAR: Lone Sails: No release or early access date.
+Break Up! And Find Love...: No release or early access date.
+Break Up! And Find Love...: No website.
+Break Up! And Find Love...: No store, source, online play or download links.
+Break Up! And Find Love...: No description.
+Break Up! And Find Love...: No trailer, screenshot, or box art.
 Galaxy Invaders VR: Unable to fetch images.
 BlockDuel: Unable to fetch images.
 Awwware: Unable to fetch images.
