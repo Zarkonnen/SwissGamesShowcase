@@ -203,7 +203,8 @@ with open("report.txt", "w") as report:
                 w('<p>{Release Date}</p>')
             else:
                 w('<p>{Early Access Date}</p>')
-            w('<p>{Platforms}</p>')
+            if "Platforms" in g:
+                w('<p>{Platforms}</p>')
             if "Online Play" in g:
                 w('<p><a href="{Online Play}">Play Online</a></p>')
             if "Download Page" in g:
@@ -255,7 +256,8 @@ with open("report.txt", "w") as report:
                     w('<p>Release Date: {Release Date}</p>')
                 if "Early Access Date" in g:
                     w('<p>Early Access Date: {Early Access Date}</p>')
-                w('<p>Platforms: {Platforms}</p>')
+                if "Platforms" in g:
+                    w('<p>Platforms: {Platforms}</p>')
                 if "Awards" in g:
                     w('<p>Awards: {Awards}</p>')
                 if "Website" in g:
