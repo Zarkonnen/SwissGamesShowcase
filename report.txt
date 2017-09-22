@@ -113,12 +113,12 @@ Vision Village: No trailer, screenshot, or box art.
 Amanzivision: No store, source, online play or download links.
 Amanzivision: No description.
 Amanzivision: No trailer, screenshot, or box art.
-Gabarello: No store, source, online play or download links.
 Zwirn: No screenshot or box art.
 Laichenberg: No store, source, online play or download links.
 Before the Satellite detects you: No store, source, online play or download links.
 Mirage: No store, source, online play or download links.
 Gbanga Famiglia: No store, source, online play or download links.
+Gabarello: No store, source, online play or download links.
 Spirit Fever: No store, source, online play or download links.
 Helsana: No store, source, online play or download links.
 Gbanga Zooh: No store, source, online play or download links.
@@ -234,6 +234,10 @@ Kawaii Panda Flappy Adventure2: No release or early access date.
 Kawaii Panda Flappy Adventure2: No website.
 Kawaii Panda Flappy Adventure2: No description.
 Kawaii Panda Flappy Adventure2: No trailer, screenshot, or box art.
+Morphies Law: No release or early access date.
+Morphies Law: No store, source, online play or download links.
+Morphies Law: No description.
+Morphies Law: No trailer, screenshot, or box art.
 Trial of Totems: Ever More: No release or early access date.
 Trial of Totems: Ever More: No website.
 Trial of Totems: Ever More: No store, source, online play or download links.
@@ -269,10 +273,6 @@ Identity Crisis: No website.
 Identity Crisis: No store, source, online play or download links.
 Identity Crisis: No description.
 Identity Crisis: No screenshot or box art.
-Oniri Islands: No release or early access date.
-Oniri Islands: No store, source, online play or download links.
-Oniri Islands: No description.
-Oniri Islands: No screenshot or box art.
 Scooter!: No release or early access date.
 Scooter!: No website.
 Scooter!: No store, source, online play or download links.
@@ -301,6 +301,10 @@ Farewell: No release or early access date.
 Farewell: No website.
 Farewell: No store, source, online play or download links.
 Farewell: No screenshot or box art.
+Oniri Islands: No release or early access date.
+Oniri Islands: No store, source, online play or download links.
+Oniri Islands: No description.
+Oniri Islands: No screenshot or box art.
 Helvetii: No release or early access date.
 Helvetii: No store, source, online play or download links.
 Helvetii: No description.
