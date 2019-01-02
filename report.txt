@@ -1,3 +1,6 @@
+Wolf's Fury: No store, source, online play or download links.
+Wolf's Fury: No description.
+Wolf's Fury: No trailer, screenshot, or box art.
 SLX Arena: No store, source, online play or download links.
 SLX Arena: No screenshot or box art.
 Tournez Fromage: No website.
@@ -51,7 +54,6 @@ Les Voies Lactées: No store, source, online play or download links.
 Doomsday Bunker: No description.
 Doomsday Bunker: No trailer, screenshot, or box art.
 Hyper Jelly: No store, source, online play or download links.
-Fairy King: No store, source, online play or download links.
 hck_2_0_0: No trailer, screenshot, or box art.
 Caps'Em All: No trailer, screenshot, or box art.
 Just Type This: No trailer, screenshot, or box art.
@@ -219,6 +221,9 @@ Babe Rally: No description.
 Babe Rally: No trailer, screenshot, or box art.
 Speedy Eggbert 2: No store, source, online play or download links.
 Ravage: No store, source, online play or download links.
+Grotic: No store, source, online play or download links.
+Grotic: No description.
+Grotic: No trailer, screenshot, or box art.
 Blupi Explorateur: No website.
 Blupi Explorateur: No store, source, online play or download links.
 Traps'n'Treasures: No website.
@@ -258,6 +263,18 @@ Ball Raider: No store, source, online play or download links.
 Ball Raider: No description.
 Ball Raider: No screenshot or box art.
 Nim: No store, source, online play or download links.
+Blown Eye: No release or early access date.
+Blown Eye: No store, source, online play or download links.
+Blown Eye: No description.
+Blown Eye: No trailer, screenshot, or box art.
+bonYx: No release or early access date.
+bonYx: No store, source, online play or download links.
+bonYx: No description.
+bonYx: No trailer, screenshot, or box art.
+breakIn: No release or early access date.
+breakIn: No store, source, online play or download links.
+breakIn: No description.
+breakIn: No trailer, screenshot, or box art.
 The Spinning Wheel of imminent Death: No release or early access date.
 The Spinning Wheel of imminent Death: No website.
 The Spinning Wheel of imminent Death: No description.
@@ -351,7 +368,6 @@ Oniri Islands: No store, source, online play or download links.
 Oniri Islands: No description.
 Oniri Islands: No screenshot or box art.
 Planet Guardian VR: No release or early access date.
-Planet Guardian VR: No store, source, online play or download links.
 Planet Guardian VR: No screenshot or box art.
 Colorful Darkness: No release or early access date.
 Colorful Darkness: No store, source, online play or download links.
@@ -365,6 +381,3 @@ Retimed: No screenshot or box art.
 Flux: No release or early access date.
 Flux: No store, source, online play or download links.
 Memowizz: No release or early access date.
-Galaxy Invaders VR: Unable to fetch images.
-Awwware: Unable to fetch images.
-BlockDuel: Unable to fetch images.
