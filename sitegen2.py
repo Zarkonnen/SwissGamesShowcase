@@ -115,6 +115,8 @@ def sort_date(g):
     d = d.strip()
     if not "-" in d and len(d) > 0:
         return d + "-01-01"
+    elif len(d.split("-")) == 2:
+        return d + "-01"
     return d
 
 # Load and filter games
