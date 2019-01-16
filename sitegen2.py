@@ -207,20 +207,31 @@ with open("report.txt", "w") as report:
                 w('<p>{Early Access Date}</p>')
             if "Platforms" in g:
                 w('<p>{Platforms}</p>')
+            w('<p>')
+            comma = False
             if "Online Play" in g:
-                w('<p><a href="{Online Play}">Play Online</a></p>')
+                if comma:
+                    w(', ')
+                w('<a href="{Online Play}">Play Online</a>')
+                comma = True
             if "Download Page" in g:
-                w('<p><a href="{Download Page}">Download</a></p>')
+                if comma:
+                    w(', ')
+                w('<a href="{Download Page}">Download</a>')
+                comma = True
             if "Direct Download" in g:
-                w('<p><a href="{Direct Download}">Download</a></p>')
+                if comma:
+                    w(', ')
+                w('<a href="{Direct Download}">Download</a>')
+                comma = True
             if "Store" in g:
-                w('<p>')
                 stores = [s.strip() for s in g["Store"].split(",")]
                 for s in stores:
-                    w('<a href="{link}">{name}</a>', name=store_name(s), link=s)
-                    if not s == stores[-1]:
+                    if comma:
                         w(', ')
-                w('</p>')
+                    w('<a href="{link}">{name}</a>', name=store_name(s), link=s)
+                    comma = True
+            w('</p>')
             w('</div>')
             w('<div style="clear: both;"></div>')
             w('</div>')
