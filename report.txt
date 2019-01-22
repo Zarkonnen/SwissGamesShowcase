@@ -1,8 +1,11 @@
 Wolf's Fury: No store, source, online play or download links.
 Wolf's Fury: No description.
 Wolf's Fury: No trailer, screenshot, or box art.
+uFin: The Challenge: No store, source, online play or download links.
+Farming Simulator Switch Edition: No description.
 SLX Arena: No store, source, online play or download links.
 SLX Arena: No screenshot or box art.
+Farming Simulator 18: No description.
 Tournez Fromage: No website.
 CastleBoy: No screenshot or box art.
 Asylamba - Influence: No website.
@@ -10,9 +13,6 @@ Four Seasons: No store, source, online play or download links.
 Oniland: No store, source, online play or download links.
 Break Up! And Find Love...: No website.
 Galaxy Invaders VR: No store, source, online play or download links.
-Weddinvaders: No website.
-Weddinvaders: No description.
-Weddinvaders: No trailer, screenshot, or box art.
 The Last Trip to Riverside: No description.
 The Last Trip to Riverside: No trailer, screenshot, or box art.
 Stone Age Clicker: No description.
@@ -126,6 +126,9 @@ Awwware: No store, source, online play or download links.
 Mehrspur: No screenshot or box art.
 SkyRider: No store, source, online play or download links.
 The Path of Go: No website.
+Wing Zero: No store, source, online play or download links.
+Wing Zero: No description.
+Wing Zero: No trailer, screenshot, or box art.
 Vision Village: No store, source, online play or download links.
 Vision Village: No description.
 Vision Village: No trailer, screenshot, or box art.
@@ -215,19 +218,20 @@ Babe Rally: No store, source, online play or download links.
 Babe Rally: No description.
 Babe Rally: No trailer, screenshot, or box art.
 Speedy Eggbert 2: No store, source, online play or download links.
+Indices: No description.
+Bulldozer: No description.
 Ravage: No store, source, online play or download links.
 Grotic: No store, source, online play or download links.
 Grotic: No description.
 Grotic: No trailer, screenshot, or box art.
+Raennamis: No description.
+Minicare: No description.
 Blupi Explorateur: No website.
 Blupi Explorateur: No store, source, online play or download links.
 Traps'n'Treasures: No website.
 Traps'n'Treasures: No store, source, online play or download links.
 Traps'n'Treasures: No description.
-Worldwide Hunting: No website.
-Worldwide Hunting: No store, source, online play or download links.
-Worldwide Hunting: No description.
-Worldwide Hunting: No trailer, screenshot, or box art.
+Train: No description.
 The Game of Life: No website.
 The Game of Life: No store, source, online play or download links.
 The Game of Life: No description.
@@ -248,8 +252,6 @@ Crack: No description.
 Blupi at Home: No store, source, online play or download links.
 War Heli: No website.
 War Heli: No store, source, online play or download links.
-Insanity Fight: No description.
-Insanity Fight: No trailer, screenshot, or box art.
 Jeu d'échecs: No store, source, online play or download links.
 Jeu d'échecs: No description.
 Ball Raider: No website.
@@ -257,46 +259,15 @@ Ball Raider: No store, source, online play or download links.
 Ball Raider: No description.
 Ball Raider: No screenshot or box art.
 Nim: No store, source, online play or download links.
-Farming Simulator 2012: No release or early access date.
-Farming Simulator 2012: No website.
-Farming Simulator 2012: No store, source, online play or download links.
-Farming Simulator 2012: No description.
-Farming Simulator 2012: No trailer, screenshot, or box art.
-Farming Simulator 2011: No release or early access date.
-Farming Simulator 2011: No website.
-Farming Simulator 2011: No store, source, online play or download links.
-Farming Simulator 2011: No description.
-Farming Simulator 2011: No trailer, screenshot, or box art.
-Farming Simulator 2009: No release or early access date.
-Farming Simulator 2009: No website.
-Farming Simulator 2009: No store, source, online play or download links.
-Farming Simulator 2009: No description.
-Farming Simulator 2009: No trailer, screenshot, or box art.
-Farming Simulator 2008: No release or early access date.
-Farming Simulator 2008: No website.
-Farming Simulator 2008: No store, source, online play or download links.
-Farming Simulator 2008: No description.
-Farming Simulator 2008: No trailer, screenshot, or box art.
-Farming Simulator 15: No release or early access date.
-Farming Simulator 15: No website.
-Farming Simulator 15: No store, source, online play or download links.
-Farming Simulator 15: No description.
-Farming Simulator 15: No trailer, screenshot, or box art.
-Farming Simulator Switch Edition: No release or early access date.
-Farming Simulator Switch Edition: No website.
-Farming Simulator Switch Edition: No store, source, online play or download links.
-Farming Simulator Switch Edition: No description.
-Farming Simulator Switch Edition: No trailer, screenshot, or box art.
-Farming Simulator 18: No release or early access date.
-Farming Simulator 18: No website.
-Farming Simulator 18: No store, source, online play or download links.
-Farming Simulator 18: No description.
-Farming Simulator 18: No trailer, screenshot, or box art.
-Farming Simulator 19: No release or early access date.
-Farming Simulator 19: No website.
-Farming Simulator 19: No store, source, online play or download links.
-Farming Simulator 19: No description.
-Farming Simulator 19: No trailer, screenshot, or box art.
+Moon Beam: No release or early access date.
+Moon Beam: No description.
+Shocker: No release or early access date.
+Shocker: No store, source, online play or download links.
+Shocker: No description.
+Shocker: No trailer, screenshot, or box art.
+Kiss App / Kiss Trainer: No release or early access date.
+Kiss App / Kiss Trainer: No description.
+Wing Zero II: No release or early access date.
 Blown Eye: No release or early access date.
 Blown Eye: No store, source, online play or download links.
 Blown Eye: No description.
@@ -352,11 +323,6 @@ Identity Crisis: No website.
 Identity Crisis: No store, source, online play or download links.
 Identity Crisis: No description.
 Identity Crisis: No screenshot or box art.
-Championship Shooting: No release or early access date.
-Championship Shooting: No website.
-Championship Shooting: No store, source, online play or download links.
-Championship Shooting: No description.
-Championship Shooting: No trailer, screenshot, or box art.
 Organ Run: No release or early access date.
 Organ Run: No store, source, online play or download links.
 Organ Run: No description.
@@ -373,10 +339,6 @@ Stabilove: No release or early access date.
 Stabilove: No store, source, online play or download links.
 Stabilove: No description.
 Stabilove: No trailer, screenshot, or box art.
-Scooter!: No release or early access date.
-Scooter!: No website.
-Scooter!: No store, source, online play or download links.
-Scooter!: No description.
 Picnic Wars: No release or early access date.
 Picnic Wars: No store, source, online play or download links.
 Picnic Wars: No description.
