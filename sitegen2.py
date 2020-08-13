@@ -89,7 +89,7 @@ def get_creators(developer):
     return re.split(" ?[,+/&:] ?", developer)
 
 def store_name(url):
-    if "itunes" in url:
+    if "itunes" in url or "apps.apple" in url or "apple.co" in url:
         return "App Store"
     if "play.google" in url:
         return "Play Store"
@@ -103,6 +103,14 @@ def store_name(url):
         return "Xbox"
     if "microsoft.com" in url:
         return "Xbox"
+    if "oculus" in url:
+        return "Oculus"
+    if "nintendo.com" in url:
+        return "Nintendo"
+    if "apps.facebook" in url:
+        return "Facebook"
+    if "amazon" in url:
+        return "Amazon"
     return "Other Store"
 
 def sort_date(g):
