@@ -5,7 +5,7 @@ import re, csv, os, subprocess, requests
 # Image processing horrors
 
 def img_dims(src):
-    name = "tmp/" + src.replace("/", "_").replace(":", "")
+    name = "download/" + src.replace("/", "_").replace(":", "")
     if not os.path.exists(name):
         r2 = requests.get(src, timeout=8)
         if r2.status_code == 200:
@@ -15,29 +15,29 @@ def img_dims(src):
     return (w, h)
 
 def img(url):
-    original = "tmp/" + url.replace("/", "_").replace(":", "")
+    original = "download/" + url.replace("/", "_").replace(":", "")
     dst = "img/media/" + re.sub("[^a-zA-Z0-9.]", "", url)
     fmt = url.split("?")[0].split(".")[-1].lower()
     if not fmt in ["jpg", "png", "gif"]:
         fmt = "png"
         dst = dst + ".png"
     if not os.path.exists(original):
-        print "Getting", url, original
+        print("Getting", url, original)
         r = requests.get(url, timeout=8)
         if r.status_code == 200:
             with open(original, 'wb') as f:
-                print "->", original
+                print("->", original)
                 f.write(r.content)
         else:
-            print r.status_code
+            print(r.status_code)
             return "img/unknown.png"
     if not os.path.exists(dst):
         try:
             subprocess.check_output(["java", "-cp", ".", "Resize", original, "400", "225", dst, fmt])
             subprocess.check_output(["java", "-cp", ".", "Resize", original, "800", "450", "big-" + dst, fmt])
-            print "->", dst
+            print("->", dst)
         except:
-            print "Failed to resize", original
+            print("Failed to resize", original)
             return original
     return dst
 
@@ -144,6 +144,8 @@ with open("report.txt", "w") as report:
         if not "Title" in g:
             continue
         title = g["Title"]
+        if "Genres" in g and "porn" in g["Genres"].lower():
+            report.write(title + ": Not listing porn game: " + g["Genres"] + "\n")
         if not ("Release Date" in g or "Early Access Date" in g):
             report.write(title + ": No release or early access date.\n")
         if not "Website" in g:
@@ -184,65 +186,67 @@ with open("report.txt", "w") as report:
                 info = g.copy()
                 info.update(kwargs)
                 f.write(s.format(**info))
-
-            w('<div id="{Identifier}_card" class="card">')
-            w('<div class="card_picture">')
-            if "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
-                w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Box Art Direct Link"]))
-            elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
-                w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Screenshot Direct Link"]))
-            elif "Trailer Video Link" in g:
-                tvl = g["Trailer Video Link"]
-                if "youtube" in tvl:
-                    w('<iframe class="card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
-                elif "vimeo" in tvl:
-                    w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
+            
+            if not ("Genres" in g and "porn" in g["Genres"].lower()):
+                w('<div id="{Identifier}_card" class="card">')
+                w('<div class="card_picture">')
+                if "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):
+                    w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Box Art Direct Link"]))
+                elif "Screenshot Direct Link" in g and has_img(g["Screenshot Direct Link"]):
+                    w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Screenshot Direct Link"]))
+                elif "Trailer Video Link" in g:
+                    tvl = g["Trailer Video Link"]
+                    if "youtube" in tvl:
+                        w('<iframe class="card_yt" src="https://www.youtube.com/embed/{yt}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>', yt=tvl.replace("https://www.youtube.com/watch?v=", "").split("?")[0])
+                    elif "vimeo" in tvl:
+                        w('<iframe class="card_vimeo" src="https://player.vimeo.com/video/{vimeo}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="card_vimeo"></iframe>', vimeo=tvl.replace("https://player.vimeo.com/video/", "").replace("https://vimeo.com/", "").replace("/", ""))
+                    else:
+                        report.write(g["Title"] + ": Unknown trailer URL format.\n")
+                elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
+                    w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Logo Direct Link"]))
                 else:
-                    report.write(g["Title"] + ": Unknown trailer URL format.\n")
-            elif "Logo Direct Link" in g and has_img(g["Logo Direct Link"]):
-                w('<a href="{Identifier}.html"><img src="{src}" class="card_picture"></a>', src=img(g["Logo Direct Link"]))
-            else:
-                w('<a href="{Identifier}.html"><img src="img/unknown.png" class="card_picture"></a>')
-                report.write(g["Title"] + ": Unable to fetch images.\n")
-            w('</div>')
-            w('<div class="card_details">')
-            w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
-            if "Development Studio" in g:
-                w('<p>{Development Studio}</p>')
-            if "Release Date" in g:
-                w('<p>{Release Date}</p>')
-            else:
-                w('<p>{Early Access Date}</p>')
-            if "Platforms" in g:
-                w('<p>{Platforms}</p>')
-            w('<p>')
-            comma = False
-            if "Online Play" in g:
-                if comma:
-                    w(', ')
-                w('<a href="{Online Play}">Play Online</a>')
-                comma = True
-            if "Download Page" in g:
-                if comma:
-                    w(', ')
-                w('<a href="{Download Page}">Download</a>')
-                comma = True
-            if "Direct Download" in g:
-                if comma:
-                    w(', ')
-                w('<a href="{Direct Download}">Download</a>')
-                comma = True
-            if "Store" in g:
-                stores = [s.strip() for s in g["Store"].split(",")]
-                for s in stores:
+                    w('<a href="{Identifier}.html"><img src="img/unknown.png" class="card_picture"></a>')
+                    report.write(g["Title"] + ": Unable to fetch images.\n")
+                w('</div>')
+                w('<div class="card_details">')
+                w('<a href="{Identifier}.html"><h2 class="card_title">{Title}</h2></a>')
+                if "Development Studio" in g:
+                    w('<p>{Development Studio}</p>')
+                if "Release Date" in g:
+                    w('<p>{Release Date}</p>')
+                else:
+                    w('<p>{Early Access Date}</p>')
+                if "Platforms" in g:
+                    w('<p>{Platforms}</p>')
+                w('<p>')
+                comma = False
+                if "Online Play" in g:
                     if comma:
                         w(', ')
-                    w('<a href="{link}">{name}</a>', name=store_name(s), link=s)
+                    w('<a href="{Online Play}">Play Online</a>')
                     comma = True
-            w('</p>')
-            w('</div>')
-            w('<div style="clear: both;"></div>')
-            w('</div>')
+                if "Download Page" in g:
+                    if comma:
+                        w(', ')
+                    w('<a href="{Download Page}">Download</a>')
+                    comma = True
+                if "Direct Download" in g:
+                    if comma:
+                        w(', ')
+                    w('<a href="{Direct Download}">Download</a>')
+                    comma = True
+                if "Store" in g:
+                    stores = [s.strip() for s in g["Store"].split(",")]
+                    for s in stores:
+                        if comma:
+                            w(', ')
+                        w('<a href="{link}">{name}</a>', name=store_name(s), link=s)
+                        comma = True
+                w('</p>')
+                w('</div>')
+                w('<div style="clear: both;"></div>')
+                w('</div>')
+            
             with open(g["Identifier"] + ".html", "w") as f2:
                 def w(s, **kwargs):
                     info = g.copy()

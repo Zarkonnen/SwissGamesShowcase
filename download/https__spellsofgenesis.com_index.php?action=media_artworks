@@ -1,0 +1,260 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Spells of Genesis is a mobile game that is a mix of a trading card game (TCG), bringing in deck
+        collection and strategy, blockchain assets, along with arcade-style gaming aspects." />
+    <meta name="keywords" content="Spells of Genesis, SOG, blockchain, counterparty, bitcrystals, Card game, Arcade game, bitcoin, Moonga" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spells of Genesis - Artworks</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Lora:400,700" rel="stylesheet">
+    <script src="https://use.fontawesome.com/b28fd5cd2a.js"></script>
+    <link rel="stylesheet" href="js/slider/css/lightslider.min.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+            0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+            for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+        mixpanel.init("4b88ce87a4281465e56a3d2dba79176c");</script><!-- end Mixpanel -->
+
+</head>
+<body>
+    <div id="root" class="root">
+        <div class="ui-nav ui-nav__open">
+    <i class="ui-nav__open__line"></i>
+    <i class="ui-nav__open__line"></i>
+    <i class="ui-nav__open__line"></i>
+</div>
+<div class="navigation__mobile">
+    <span class="close ui-nav ui-nav__close"></span>
+    <h1 class="navigation__mobile__logo">
+        <a href="index.php"></a>
+    </h1>
+    <div class="lang">
+        <a href="index.php?lang=fr_FR">
+            <img src="img/home/fr_FR.png" alt="Cliquez ici pour la version française" width="50" height="50" />
+        </a>
+        <a href="index.php?lang=en_US">
+            <img src="img/home/en_US.png" alt="Click here for the english version" width="50" height="50" />
+        </a>
+        <a href="index.php?lang=ja_JP">
+            <img src="img/home/ja_JP.png" alt="日本語版ウェブサイトはこちら" width="50" height="50" />
+        </a>
+    </div>
+    <ul class="navigation__mobile__list">
+        <li class="navigation__mobile__item"><a href="index.php?action=game">Game</a></li>
+        <li class="navigation__mobile__item"><a href="index.php?action=cards">Cards</a></li>
+        <li class="navigation__mobile__item"><a href="index.php?action=game_economy">Economy</a></li>
+        <li class="navigation__mobile__item"><a href="index.php?action=media">Media</a></li>
+        <li class="navigation__mobile__item"><a href="index.php?action=community">Community</a></li>
+        <li class="navigation__mobile__item"><a href="http://blog.spellsofgenesis.com/" target="_blank">News</a></li>
+        <!--<li class="navigation__mobile__item"><a href="index.php?action=news">News</a></li>-->
+                    <li class="navigation__mobile__item"><a href="index.php?action=login">Login</a></li>
+            </ul>
+</div>
+            <div class="media media--screens">
+        <div class="top__banner top__banner--small">
+
+    <img class="top__banner__img" src="img/home/banner_small.png" alt="">
+    <div class="top__banner__img__bg"></div>
+    <h1 class="logo"><a href="index.php"></a></h1>
+    <div class="btn-box button--magic">
+        <a href="index.php?action=game#download_anchor" class="button button--gold">
+            <span class="shine"></span>
+            <div class="img"></div>
+            <div class="text">Play Free Now</div>
+        </a>
+        <span class="btn-box__shadow"></span>
+    </div>
+    <div class="navigation navigation--absolute">
+        <div class="lang">
+            <a href="index.php?lang=fr_FR">
+                <img src="img/home/fr_FR.png" alt="Cliquez ici pour la version française" width="50" height="50" />
+            </a>
+            <a href="index.php?lang=en_US">
+                <img src="img/home/en_US.png" alt="Please click here for the english version" width="50" height="50" />
+            </a>
+            <a href="index.php?lang=ja_JP">
+                <img src="img/home/ja_JP.png" alt="日本語版ウェブサイトはこちら" width="50" height="50" />
+            </a>
+        </div>
+        <ul class="navigation__list">
+            <li class="navigation__list__item ">
+                <a class="navigation__list__link " href="index.php?action=game">Game</a>
+            </li>
+            <li class="navigation__list__item ">
+                <a class="navigation__list__link" href="index.php?action=cards">Cards</a>
+            </li>
+            <li class="navigation__list__item ">
+                <a class="navigation__list__link" href="index.php?action=game_economy">Economy</a>
+            </li>
+            <li class="navigation__list__item is-active">
+                <a class="navigation__list__link" href="index.php?action=media">Media</a>
+            </li>
+            <li class="navigation__list__item ">
+                <a class="navigation__list__link" href="index.php?action=community">Community</a>
+            </li>
+            <li class="navigation__list__item ">
+                <a class="navigation__list__link" href="http://blog.spellsofgenesis.com/" target="_blank">News</a>
+                <!--<a class="navigation__list__link" href="index.php?action=news">News</a>-->
+            </li>
+
+            <!-- STORY MENU -->
+                                        
+            <li class="navigation__list__item ">
+                                    <a class="navigation__list__link" href="index.php?action=login">Login</a>
+                            </li>
+                    </ul>
+    </div>
+</div>        <div class="parchment-bg">
+            <article class="container__content container__content--small">
+                <div class="text-center">
+                    <div class="title title--bold">
+                        Media
+                    </div>
+                </div>
+                <ul class="filter-panel filter-panel--flex-center clearfix">
+                    <li class="filter-panel__item"><a href="index.php?action=media" class="filter-panel__link">VIdeos</a></li>
+                    <li class="filter-panel__item"><a href="index.php?action=media_screenshots" class="filter-panel__link">Screenshots</a></li>
+                    <li class="filter-panel__item is-active"><a href="index.php?action=media_artworks" class="filter-panel__link">Artworks</a></li>
+                </ul>
+                <!--<div class="media__title">Legendary</div>-->
+            </article>
+            <article class="container__content">
+                <div class="media__title">ArtWorks</div>
+                <div class="gallery js-gallery">
+                    <a href="img/home/gallery1.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/gallery1.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/slide-2.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/slide-2.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/slide-3.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/slide-3.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/slide-4.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/slide-4.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/slide-6.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/slide-6.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/gallery2.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/gallery2.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/gallery3.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/gallery3.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/gallery4.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/gallery4.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/gallery5.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/gallery5.png" alt="g">
+                        </div>
+                    </a>
+                    <a href="img/home/gallery6.png" class="gallery__item">
+                        <div class="gallery__item__image">
+                            <img class="gallery__item__image" src="img/home/gallery6.png" alt="g">
+                        </div>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+    </div>
+    <div class="pre-footer"></div>
+<footer class="footer">
+    <span class="footer__icon footer__icon--top-left"></span>
+    <span class="footer__icon footer__icon--top-right"></span>
+    <span class="footer__icon footer__icon--bottom-left"></span>
+    <span class="footer__icon footer__icon--bottom-right"></span>
+    <div class="footer__bg"></div>
+    <div class="footer__content">
+        <div class="footer__content__title">Are You<br>Up For the<br>Challenge ?</div>
+        <div class="footer__content__text">Destroying all your enemy orbs <br> requires a lot of skills and cunning.</div>
+        <div class="btn-box">
+            <a href="index.php?action=game#download_anchor" class="button button--gold">
+                <span class="shine"></span>
+                <div class="img"></div>
+                <div class="text">Play Free Now</div>
+            </a>
+            <span class="btn-box__shadow"></span>
+        </div>
+    </div>
+    <div class="footer__social">
+        <ul class="footer__social__list">
+            <li><a href="https://www.facebook.com/spellsofgenesis/" class="footer__social__icon" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a></li>
+            <li><a href="https://twitter.com/spellsofgenesis" class="footer__social__icon" target="_blank">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a></li>
+            <li><a href="mailto:info@everdreamsoft.com" class="footer__social__icon">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/headroom.min.js"></script>
+<script src="js/slider/js/lightslider.min.js"></script>
+<script src="js/magnific-popup/jquery.magnific-popup.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/baguetteBox.min.js"></script>
+<script src="js/app.js"></script>    <script>
+        $(document).ready(function() {
+            $('.popup').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+
+                fixedContentPos: false
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function tumblr(resp) {
+            var posts = resp.posts;
+            $('#blog .loading').replaceWith('<div/>');
+            var $ul = $('#blog div');
+            for (var i=0; i<posts.length; i++) {
+                var p = posts[i];
+                var title = p['regular-title'] || p['link-text'] || null;
+                var body = p['regular-body'];
+                if (title)
+                    $ul.append('<div class="text-center"><div class="title title--bold"><h3><p><strong>'+title+'</strong></p></h3></div></div>');
+                $ul.append('<div class="text" style="margin-top:-80px;"><p>'+body+'</p></div><p>&nbsp;</p><div class="decor"></div>')
+            }
+        }
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-55627057-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
