@@ -4,6 +4,7 @@ Wolf's Fury: No trailer, screenshot, or box art.
 Corvus Sector: No website.
 Hobo Cat Adventures: No website.
 Car Looper: No website.
+Eternia: Pet Whisperer: No website.
 Castello Visconteo: No store, source, online play or download links.
 Let's Help Together: No store, source, online play or download links.
 Witchcraft: No website.
@@ -299,6 +300,7 @@ Catch the Sperm: No store, source, online play or download links.
 Mad Locs: No website.
 Indices: No description.
 Bulldozer: No description.
+Galactic Empire: No store, source, online play or download links.
 Ravage: No store, source, online play or download links.
 Kaiser Deluxe: No website.
 Grotic: No trailer, screenshot, or box art.
@@ -344,6 +346,23 @@ Jeu d'échecs: No description.
 Bong: No description.
 Ball Raider: No website.
 Nim: No store, source, online play or download links.
+Wild Planet: No release or early access date.
+Wild Planet: No store, source, online play or download links.
+Wild Planet: No trailer, screenshot, or box art.
+Henry - Guardian of Nature: No release or early access date.
+Henry - Guardian of Nature: No store, source, online play or download links.
+Elementary Trolleyology: No release or early access date.
+Elementary Trolleyology: No website.
+Elementary Trolleyology: No store, source, online play or download links.
+Elementary Trolleyology: No trailer, screenshot, or box art.
+Spirit: No release or early access date.
+Spirit: No store, source, online play or download links.
+Spirit: No description.
+Wéko The Mask Gatherer: No release or early access date.
+Wéko The Mask Gatherer: No website.
+Wéko The Mask Gatherer: No store, source, online play or download links.
+Wéko The Mask Gatherer: No description.
+Wéko The Mask Gatherer: No trailer, screenshot, or box art.
 Kendria: No release or early access date.
 Kendria: No website.
 Kendria: No store, source, online play or download links.
@@ -423,7 +442,6 @@ Team: Cars: No store, source, online play or download links.
 Team: Cars: No description.
 Team: Cars: No trailer, screenshot, or box art.
 Swordship: No release or early access date.
-Swordship: No store, source, online play or download links.
 Swordship: No description.
 Swordship: No trailer, screenshot, or box art.
 Stupid Creatures: No release or early access date.
