@@ -187,7 +187,7 @@ with open("report.txt", "w") as report:
                 info.update(kwargs)
                 f.write(s.format(**info))
             
-            if not ("Genres" in g and "porn" in g["Genres"].lower()):
+            if not ("Genres" in g and "porn" in g["Genres"].lower()) and not g["Title"] == "TELL2021":
                 w('<div id="{Identifier}_card" class="card">')
                 w('<div class="card_picture">')
                 if "Box Art Direct Link" in g and has_img(g["Box Art Direct Link"]):

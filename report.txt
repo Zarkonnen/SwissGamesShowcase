@@ -6,6 +6,7 @@ Hobo Cat Adventures: No website.
 Car Looper: No website.
 Eternia: Pet Whisperer: No website.
 Castello Visconteo: No store, source, online play or download links.
+Speedy Square: No website.
 Let's Help Together: No store, source, online play or download links.
 Witchcraft: No website.
 aequaland: No description.
@@ -19,6 +20,7 @@ A Glider's Journey: No website.
 Save the baby unicorns: No website.
 Sphery Racer: No store, source, online play or download links.
 Limited Connection: No website.
+Snowball Runner: No website.
 0 Versus 1: No website.
 0 Versus 1: No description.
 0 Versus 1: No trailer, screenshot, or box art.
@@ -31,6 +33,8 @@ an Orc's Tale: Kriegsruf: No website.
 SLX Arena: No store, source, online play or download links.
 SLX Arena: No screenshot or box art.
 Farming Simulator 18: No description.
+Chase the rabbit VR: No website.
+Sensoryx Tennis VR: No store, source, online play or download links.
 Best Drift: No store, source, online play or download links.
 Best Drift: No trailer, screenshot, or box art.
 BrawlMe: No store, source, online play or download links.
@@ -43,6 +47,7 @@ Four Seasons: No store, source, online play or download links.
 Oniland: No store, source, online play or download links.
 Break Up! And Find Love...: No website.
 Galaxy Invaders VR: No store, source, online play or download links.
+Shiny: No store, source, online play or download links.
 Watcher: No store, source, online play or download links.
 Watcher: No screenshot or box art.
 VirusInfection 3: No website.
@@ -53,11 +58,10 @@ We Fit: No screenshot or box art.
 The Last Trip to Riverside: No description.
 The Last Trip to Riverside: No trailer, screenshot, or box art.
 Super Fleet Manager: No store, source, online play or download links.
-Stone Age Clicker: No description.
-Stone Age Clicker: No trailer, screenshot, or box art.
 Memory Battle: No trailer, screenshot, or box art.
 Loco Locos: No trailer, screenshot, or box art.
 Grundwasser App: No website.
+Split's Grosse Reise: No store, source, online play or download links.
 Frechmax - Auf Fotojagd: No store, source, online play or download links.
 Frechmax - Auf Fotojagd: No description.
 Frechmax - Auf Fotojagd: No trailer, screenshot, or box art.
@@ -346,6 +350,28 @@ Jeu d'échecs: No description.
 Bong: No description.
 Ball Raider: No website.
 Nim: No store, source, online play or download links.
+Feratopia: No release or early access date.
+Feratopia: No store, source, online play or download links.
+Feratopia: No description.
+Feratopia: No trailer, screenshot, or box art.
+The Pirates Bay: No release or early access date.
+The Pirates Bay: No store, source, online play or download links.
+The Pirates Bay: No description.
+The Pirates Bay: No trailer, screenshot, or box art.
+The Thief of Homburg: No release or early access date.
+The Thief of Homburg: No store, source, online play or download links.
+The Thief of Homburg: No description.
+The Thief of Homburg: No trailer, screenshot, or box art.
+Labyrinth Dreamer: No release or early access date.
+Labyrinth Dreamer: No store, source, online play or download links.
+TÊT: No release or early access date.
+TÊT: No store, source, online play or download links.
+TÊT: No description.
+TÊT: No trailer, screenshot, or box art.
+Turtles: No release or early access date.
+Turtles: No store, source, online play or download links.
+Turtles: No description.
+Turtles: No trailer, screenshot, or box art.
 Wild Planet: No release or early access date.
 Wild Planet: No store, source, online play or download links.
 Wild Planet: No trailer, screenshot, or box art.
@@ -393,10 +419,6 @@ Somnos: No release or early access date.
 Somnos: No store, source, online play or download links.
 Somnos: No description.
 Somnos: No trailer, screenshot, or box art.
-The Mole Men: No release or early access date.
-The Mole Men: No store, source, online play or download links.
-The Mole Men: No description.
-The Mole Men: No trailer, screenshot, or box art.
 Spirit Trail: No release or early access date.
 Spirit Trail: No website.
 Spirit Trail: No store, source, online play or download links.
